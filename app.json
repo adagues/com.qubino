@@ -4,7 +4,7 @@
     "en": "Qubino"
   },
   "sdk": 2,
-  "version": "3.1.0",
+  "version": "3.1.1",
   "compatibility": ">=3.0.0",
   "brandColor": "#1784c7",
   "description": {
@@ -12159,15 +12159,15 @@
                 {
                   "id": "8",
                   "label": {
-                    "en": "Scene mode - Toggle switch",
-                    "nl": "Scene modus - Tuimelschakelaar"
+                    "en": "Scene mode - Momentary switch",
+                    "nl": "Scene modus - Pulsdrukschakelaar"
                   }
                 },
                 {
                   "id": "9",
                   "label": {
-                    "en": "Scene mode - Toggle switch with memory",
-                    "nl": "Scene modus - Tuimelschakelaar met geheugen"
+                    "en": "Scene mode - Toggle switch",
+                    "nl": "Scene modus - Tuimelschakelaar"
                   }
                 },
                 {
@@ -12248,15 +12248,15 @@
                 {
                   "id": "8",
                   "label": {
-                    "en": "Scene mode - Toggle switch",
-                    "nl": "Scene modus - Tuimelschakelaar"
+                    "en": "Scene mode - Momentary switch",
+                    "nl": "Scene modus - Pulsdrukschakelaar"
                   }
                 },
                 {
                   "id": "9",
                   "label": {
-                    "en": "Scene mode - Toggle switch with memory",
-                    "nl": "Scene modus - Tuimelschakelaar met geheugen"
+                    "en": "Scene mode - Toggle switch",
+                    "nl": "Scene modus - Tuimelschakelaar"
                   }
                 },
                 {
@@ -12337,15 +12337,15 @@
                 {
                   "id": "8",
                   "label": {
-                    "en": "Scene mode - Toggle switch",
-                    "nl": "Scene modus - Tuimelschakelaar"
+                    "en": "Scene mode - Momentary switch",
+                    "nl": "Scene modus - Pulsdrukschakelaar"
                   }
                 },
                 {
                   "id": "9",
                   "label": {
-                    "en": "Scene mode - Toggle switch with memory",
-                    "nl": "Scene modus - Tuimelschakelaar met geheugen"
+                    "en": "Scene mode - Toggle switch",
+                    "nl": "Scene modus - Tuimelschakelaar"
                   }
                 },
                 {
@@ -12426,15 +12426,15 @@
                 {
                   "id": "8",
                   "label": {
-                    "en": "Scene mode - Toggle switch",
-                    "nl": "Scene modus - Tuimelschakelaar"
+                    "en": "Scene mode - Momentary switch",
+                    "nl": "Scene modus - Pulsdrukschakelaar"
                   }
                 },
                 {
                   "id": "9",
                   "label": {
-                    "en": "Scene mode - Toggle switch with memory",
-                    "nl": "Scene modus - Tuimelschakelaar met geheugen"
+                    "en": "Scene mode - Toggle switch",
+                    "nl": "Scene modus - Tuimelschakelaar"
                   }
                 },
                 {
