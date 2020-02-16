@@ -1,0 +1,80 @@
+{
+  "id": "ZMNHQD",
+  "name": {
+    "en": "LUXY Smart Light (ZMNHQD)"
+  },
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "onoff.buzzer",
+    "volume_set"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    },
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    },
+    "volume_set":{
+      "title": {
+        "en": "Set the alarm buzzer volume",
+        "nl": "Zet het alarm buzzer volume"
+      }
+    },
+    "onoff.buzzer":{
+      "title": {
+        "en": "Alarm buzzer turned on",
+        "nl": "Alarm buzzer aangezet"
+      },
+      "preventInsights": true,
+      "insightsTitleTrue": {
+        "en": "Alarm buzzer activated",
+        "nl": "Alarm buzzer geactiveerd"
+      },
+      "insightsTitleFalse": {
+        "en": "Alarm buzzer deactivated",
+        "nl": "Alarm buzzer uitgeschakeld"
+      }
+    }
+  },
+  "energy": {
+		"approximation": {
+			"usageOn": 1.5,
+			"usageOff": 0
+		}
+	},
+  "zwave": {
+    "manufacturerId": 345,
+    "productTypeId": 8,
+    "productId": 81,
+    "includeSecure": false,
+    "__comment": "Reverted back to non secure inclusion due to S2 security handshake issues",
+    "associationGroups": [
+      1
+    ],
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en":"(Re-)activate full white (one press on (1)). \n\nWhen full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\nAfter 6 seconds, the {{driverNameEn}} starts flashing green 1 second on, 0.5 second off.\n\nOnce the device has been succesfully added (after 10 seconds), it stops flashing and turns full green.",
+        "nl": "(Her-)activeer volledig wit (een keer drukken op (1)). \n\nWanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\n\nNa 6 seconden zal {{driverNameNl}} groen gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n\n Wanneer toevoegen succesvol afgerond is (na 10 seconden), stopt het knipperen en wordt LED volledig groen."
+      }
+    },
+    "unlearnmode": {
+      "instruction": {
+        "en": "Activate full white (one press on (1)). \n\nWhen full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\nAfter 6 seconds, {{driverNameEn}} starts flashing red 1 second on, 0.5 second off.\n\nWait until the device stops flashing and turns full red.",
+        "nl": "Activeer volledig wit (een keer drukken op (1)). \n\nWanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\n\nNa 6 seconden zal {{driverNameNl}} rood gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n\n Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
+      },
+      "image": "{{driverAssetsPath}}/unlearnmode.svg"
+    }
+  }
+}

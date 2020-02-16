@@ -1,0 +1,7 @@
+{
+  "$id": "turnOffBuzzer_{{driverId}}",
+  "title": {
+    "en": "Deactivate alarm buzzer",
+    "nl": "Schakel alarm buzzer uit"
+  }
+}
