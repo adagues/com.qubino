@@ -4,7 +4,7 @@
     "en": "Qubino"
   },
   "sdk": 2,
-  "version": "3.1.1",
+  "version": "3.1.2",
   "compatibility": ">=3.0.0",
   "brandColor": "#1784c7",
   "description": {
@@ -29,6 +29,10 @@
       {
         "name": "Martin Brasse",
         "email": "kasteleman@gmail.com"
+      },
+      {
+        "name": "Ted Tolboom",
+        "email": "dTNL.Homey@gmail.com"
       }
     ]
   }
