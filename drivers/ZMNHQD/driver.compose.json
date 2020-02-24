@@ -27,23 +27,23 @@
     },
     "volume_set":{
       "title": {
-        "en": "Set the alarm buzzer volume",
-        "nl": "Zet het alarm buzzer volume"
+        "en": "Set the buzzer volume",
+        "nl": "Zet het buzzer volume"
       }
     },
     "onoff.buzzer":{
       "title": {
-        "en": "Alarm buzzer turned on",
-        "nl": "Alarm buzzer aangezet"
+        "en": "Buzzer turned on",
+        "nl": "Buzzer aangezet"
       },
       "preventInsights": true,
       "insightsTitleTrue": {
-        "en": "Alarm buzzer activated",
-        "nl": "Alarm buzzer geactiveerd"
+        "en": "Buzzer activated",
+        "nl": "Buzzer geactiveerd"
       },
       "insightsTitleFalse": {
-        "en": "Alarm buzzer deactivated",
-        "nl": "Alarm buzzer uitgeschakeld"
+        "en": "Buzzer deactivated",
+        "nl": "buzzer uitgeschakeld"
       }
     }
   },

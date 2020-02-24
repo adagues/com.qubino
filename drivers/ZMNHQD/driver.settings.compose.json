@@ -111,8 +111,8 @@
       "size": 1
     },
     "label": {
-      "en": "Turn off alarm buzzer",
-      "nl": "Uitschakelen alarm buzzer"
+      "en": "Turn off buzzer",
+      "nl": "Uitschakelen buzzer"
     },
     "value": "1",
     "values": [

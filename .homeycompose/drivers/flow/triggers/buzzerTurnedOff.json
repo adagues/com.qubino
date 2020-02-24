@@ -1,7 +1,7 @@
 {
   "$id": "buzzerTurnedOff_{{driverId}}",
   "title": {
-    "en": "Alarm buzzer turned off",
-    "nl": "Alarm buzzer uitgezet"
+    "en": "Buzzer turned off",
+    "nl": "Buzzer uitgezet"
   }
 }

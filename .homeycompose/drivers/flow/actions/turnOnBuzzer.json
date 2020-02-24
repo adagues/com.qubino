@@ -1,7 +1,7 @@
 {
   "$id": "turnOnBuzzer_{{driverId}}",
   "title": {
-    "en": "Activate alarm buzzer",
-    "nl": "Schakel alarm buzzer in"
+    "en": "Activate buzzer",
+    "nl": "Schakel buzzer in"
   }
 }
