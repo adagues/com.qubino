@@ -3,24 +3,18 @@
 const { Util } = require('homey-meshdriver');
 
 const QubinoDimDevice = require('../../lib/QubinoDimDevice');
-const { CAPABILITIES, COMMAND_CLASSES, FLOWS, SETTINGS } = require('../../lib/constants');
+const {
+  CAPABILITIES, COMMAND_CLASSES, FLOWS, SETTINGS,
+} = require('../../lib/constants');
 
 const COLOR_REPORT_DEBOUNCE_TIMEOUT = 500; // ms
 const MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT = 500; // ms
 
 /**
  * LUXY Smart Light (ZMNHQD)
- * Extended manual: https://qubino.com/manuals/Flush_RGBW_Dimmer.pdf
+ * Extended manual:
  */
 class ZMNHQD extends QubinoDimDevice {
-
-  /**
-   * Method that registers custom setting parsers.
-   */
-  registerSettings() {
-    super.registerSettings();
-
-  }
 
   /**
    * Method that will register capabilities of the device based on its configuration.
@@ -55,27 +49,27 @@ class ZMNHQD extends QubinoDimDevice {
     // Register Alarm Buzzer onoff capability
     this.registerCapability(CAPABILITIES.ONOFF_BUZZER, COMMAND_CLASSES.SOUND_SWITCH, {
       get: 'SOUND_SWITCH_TONE_PLAY_GET',
-    	set: 'SOUND_SWITCH_TONE_PLAY_SET',
-    	getOpts: {
-    		getOnStart: true,
-    	},
-    	setParserV1(value) {
-        return {'Tone identifier': value ? 1: 0,}
-    	},
-    	report: 'SOUND_SWITCH_TONE_PLAY_REPORT',
-    	reportParserV1: report => {
-    		if (report && report.hasOwnProperty('Tone Identifier')) {
-    			if (report['Tone Identifier'] === 1) {
+      set: 'SOUND_SWITCH_TONE_PLAY_SET',
+      getOpts: {
+      	getOnStart: true,
+      },
+      setParserV1(value) {
+        return { 'Tone identifier': value ? 1 : 0 };
+      },
+      report: 'SOUND_SWITCH_TONE_PLAY_REPORT',
+      reportParserV1: report => {
+      	if (report && report.hasOwnProperty('Tone Identifier')) {
+      		if (report['Tone Identifier'] === 1) {
             this.driver.triggerFlow(FLOWS.BUZZER_TURNED_ON, this, {}, {}).catch(err => this.error('failed to trigger flow', FLOWS.BUZZER_TURNED_ON, err));
             return true;
           }
-    			else if (report['Tone Identifier'] === 0) {
+      		if (report['Tone Identifier'] === 0) {
             this.driver.triggerFlow(FLOWS.BUZZER_TURNED_OFF, this, {}, {}).catch(err => this.error('failed to trigger flow', FLOWS.BUZZER_TURNED_OFF, err));
             return false;
           }
-    		}
-    		return null;
-    	}
+      	}
+      	return null;
+      },
     });
 
     // Register Alarm Buzzer volume capability
@@ -127,7 +121,7 @@ class ZMNHQD extends QubinoDimDevice {
     }
 
     // If not all color components are received request remaining
-    if (red === null || green === null || blue === null ) {
+    if (red === null || green === null || blue === null) {
       this.log('_debouncedColorReportListener() -> missing a RGBW value, request others');
       // Color components [red = 2, green = 3, blue = 4]
       const commandClassColorSwitch = this.getCommandClass(COMMAND_CLASSES.SWITCH_COLOR);
@@ -137,14 +131,14 @@ class ZMNHQD extends QubinoDimDevice {
           this._getColorValue(2), // red
           this._getColorValue(3), // green
           this._getColorValue(4), // blue
-          this.refreshCapabilityValue(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL)
+          this.refreshCapabilityValue(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL),
         ])
           .then(async result => {
             const [red, green, blue, dim] = result;
             this.log(`_debouncedColorReportListener() -> fetched rgb(${red},${green},${blue})`);
 
             // Update state if device is turned on
-            if (red || green || blue ) {
+            if (red || green || blue) {
               // Store color components in state object
               this._colorComponentsState.red = red;
               this._colorComponentsState.green = green;
@@ -199,23 +193,23 @@ class ZMNHQD extends QubinoDimDevice {
    */
   _generateColorComponents(newCapabilitiesValuesObject, currentCapabilitiesValuesObject) {
     // Get desired capability values from new/current
-    const onoff = this._getDesiredCapabilityValue('onoff', newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
-    const dim = this._getDesiredCapabilityValue('dim', newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
-    const hue = this._getDesiredCapabilityValue('light_hue', newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
-    const saturation = this._getDesiredCapabilityValue('light_saturation', newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
+    const onoff = this._getDesiredCapabilityValue(CAPABILITIES.ONOFF, newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
+    const dim = this._getDesiredCapabilityValue(CAPABILITIES.DIM, newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
+    const hue = this._getDesiredCapabilityValue(CAPABILITIES.LIGHT_HUE, newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
+    const saturation = this._getDesiredCapabilityValue(CAPABILITIES.LIGHT_SATURATION, newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
 
     // Calculate RGB values based on dim value 1, RGB is scaled for dim later
-    let { red, green, blue } = Util.convertHSVToRGB({ hue, saturation, value: 1 });
+    const { red, green, blue } = Util.convertHSVToRGB({ hue, saturation, value: 1 });
 
     // Store colorComponent values when device is off AND is one of the color components has changed <<CHANGE compared to ZMNHWD>>
-    if (onoff === false ) {
+    if (onoff === false) {
       this._colorComponentsState.red = red;
       this._colorComponentsState.green = green;
       this._colorComponentsState.blue = blue;
       this.log('stored colorComponent values\n', this._colorComponentsState);
       this._colorChangedWhileOff = true; // Flag that indicates if color component state needs to be restored when turning on
     } else {
-      this._colorChangedWhileOff = false // Reset flag
+      this._colorChangedWhileOff = false; // Reset flag
     }
 
     const colorComponentsObject = {
@@ -248,10 +242,10 @@ class ZMNHQD extends QubinoDimDevice {
 
     // Current capability values
     const currentCapabilitiesValuesObject = {
-      onoff: this.getCapabilityValue('onoff'),
-      dim: this.getCapabilityValue('dim'),
-      light_hue: this.getCapabilityValue('light_hue'),
-      light_saturation: this.getCapabilityValue('light_saturation'),
+      onoff: this.getCapabilityValue(CAPABILITIES.ONOFF),
+      dim: this.getCapabilityValue(CAPABILITIES.DIM),
+      light_hue: this.getCapabilityValue(CAPABILITIES.LIGHT_HUE),
+      light_saturation: this.getCapabilityValue(CAPABILITIES.LIGHT_SATURATION),
     };
 
     // Filter newCapabilityValues for undefined properties, resulting in object with updated capability values
@@ -286,7 +280,6 @@ class ZMNHQD extends QubinoDimDevice {
     if (Object.prototype.hasOwnProperty.call(values, CAPABILITIES.DIM)
       && !this._colorChangedWhileOff // when colors changed while off reset color component state
       && Object.keys(values).length === 1) {
-
       this.log('_multipleCapabilitiesHandler() -> only dim changed', mergedCapabilitiesValuesObject.dim);
       this._ignoreNextColorReport = true;
       // Execute dim only
@@ -319,13 +312,12 @@ class ZMNHQD extends QubinoDimDevice {
       else this.setCapabilityValue(CAPABILITIES.DIM, 1);
 
       // First check if colors need to be updated
-      //this._sendColors({ ...colorComponents });
+      // this._sendColors({ ...colorComponents });
 
       // Switch on dimmer
       this.executeCapabilitySetCommand(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_MULTILEVEL, true, {
         duration: dimDuration,
       });
-
     }
 
     // Set onoff to false when the rgbw values are zero
@@ -404,10 +396,11 @@ class ZMNHQD extends QubinoDimDevice {
 
     // Device has been turned off
     if (red === 0 && green === 0 && blue === 0) {
-
       // Colors where dimmed to zero so device is basically off, do not continue further
       return this.setCapabilityValue(CAPABILITIES.ONOFF, false);
-    } if (this.getCapabilityValue(CAPABILITIES.ONOFF) === false && (red > 0 || green > 0 || blue > 0)) {
+    }
+
+    if (this.getCapabilityValue(CAPABILITIES.ONOFF) === false && (red > 0 || green > 0 || blue > 0)) {
 
       // Device was off but received color values that indicate device is on
       // this.setCapabilityValue(CAPABILITIES.ONOFF, true);
@@ -419,11 +412,10 @@ class ZMNHQD extends QubinoDimDevice {
       green,
       blue,
     });
-      this.setCapabilityValue('light_hue', hue);
-      this.setCapabilityValue('light_saturation', saturation);
-      this.log('_processColorUpdates() -> light_hue:', hue);
-      this.log('_processColorUpdates() -> light_saturation:', saturation);
-
+    this.setCapabilityValue(CAPABILITIES.LIGHT_HUE, hue);
+    this.setCapabilityValue(CAPABILITIES.LIGHT_SATURATION, saturation);
+    this.log('_processColorUpdates() -> light_hue:', hue);
+    this.log('_processColorUpdates() -> light_saturation:', saturation);
   }
 
   /**
@@ -480,7 +472,7 @@ class ZMNHQD extends QubinoDimDevice {
           Value: Math.round(blue),
         },
       ],
-      Duration: 'Default'
+      Duration: 'Default',
     };
 
     this._colorComponentsState.red = setCommand.vg1[0].Value;
@@ -494,6 +486,7 @@ class ZMNHQD extends QubinoDimDevice {
     }
     return this.node.CommandClass.COMMAND_CLASS_SWITCH_COLOR.SWITCH_COLOR_SET(setCommand);
   }
+
 }
 
 module.exports = ZMNHQD;
