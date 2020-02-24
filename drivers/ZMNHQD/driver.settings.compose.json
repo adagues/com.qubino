@@ -148,8 +148,8 @@
       "nl": "Bewegingssensor uitschakeltijd"
     },
     "hint": {
-      "en": "This parameter ({{zwaveParameterIndex}}) determines the time after which the output triggered by motion sensor is turned off. \n32535 – never turns off",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijdsduur waarna de uitgang die ingeschakeld is doot de Bewegingssensor uitgeschakeld wordt. \n32535 – schakelt nooit uit"
+      "en": "This parameter ({{zwaveParameterIndex}}) determines the time after which the output triggered by motion sensor is turned off. Setting the value to 32535 will result in the output never being turned off.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijdsduur waarna de uitgang die ingeschakeld is doot de Bewegingssensor uitgeschakeld wordt. Het instellen van de waarde op 32535 zorgt dat de uitgang nooit uitgeschakeld wordt."
     },
     "units": {
       "en": "s",
