@@ -36,7 +36,6 @@
         "en": "Buzzer turned on",
         "nl": "Buzzer aangezet"
       },
-      "preventInsights": true,
       "insightsTitleTrue": {
         "en": "Buzzer activated",
         "nl": "Buzzer geactiveerd"
