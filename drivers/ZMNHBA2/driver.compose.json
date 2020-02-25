@@ -22,6 +22,7 @@
       2,
       3
     ],
+    "includeSecure": false,
     "multiChannelNodes": {
       "1": {
         "class": "socket",

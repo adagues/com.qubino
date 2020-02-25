@@ -11,7 +11,7 @@
     "measure_power",
     "meter_power",
     "measure_temperature",
-    "onoff",        
+    "onoff",
     "button.reset_meter"
   ],
   "capabilitiesOptions": {
@@ -34,6 +34,7 @@
     "associationGroups": [
       1
     ],
+    "includeSecure": false,
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {

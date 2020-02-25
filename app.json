@@ -1719,6 +1719,7 @@
           3,
           4
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHAA2/assets/learnmode.svg",
           "instruction": {
@@ -2011,6 +2012,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHAD1/assets/learnmode.svg",
           "instruction": {
@@ -2591,6 +2593,7 @@
           2,
           3
         ],
+        "includeSecure": false,
         "multiChannelNodes": {
           "1": {
             "class": "socket",
@@ -2955,6 +2958,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHBD1/assets/learnmode.svg",
           "instruction": {
@@ -3543,6 +3547,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHCD/assets/learnmode.svg",
           "instruction": {
@@ -3984,6 +3989,7 @@
           3,
           4
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHDA2/assets/learnmode.svg",
           "instruction": {
@@ -4368,6 +4374,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHDD1/assets/learnmode.svg",
           "instruction": {
@@ -5161,6 +5168,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHHD/assets/learnmode.svg",
           "instruction": {
@@ -5577,6 +5585,7 @@
         "associationGroups": [
           6
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHIA2/assets/learnmode.svg",
           "instruction": {
@@ -6179,6 +6188,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHID/assets/learnmode.svg",
           "instruction": {
@@ -7227,6 +7237,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHKD1/assets/learnmode.svg",
           "instruction": {
@@ -8226,6 +8237,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHLD/assets/learnmode.svg",
           "instruction": {
@@ -9424,6 +9436,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHND1/assets/learnmode.svg",
           "instruction": {
@@ -9863,6 +9876,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHOD/assets/learnmode.svg",
           "instruction": {
@@ -10301,6 +10315,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHSD1/assets/learnmode.svg",
           "instruction": {
@@ -10833,6 +10848,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHTD1/assets/learnmode.svg",
           "instruction": {
@@ -11303,6 +11319,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHVD1/assets/learnmode.svg",
           "instruction": {
@@ -11893,6 +11910,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHWD/assets/learnmode.svg",
           "instruction": {
@@ -12598,6 +12616,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNHYD/assets/learnmode.svg",
           "instruction": {
@@ -12923,6 +12942,7 @@
         "associationGroups": [
           1
         ],
+        "includeSecure": false,
         "learnmode": {
           "image": "/drivers/ZMNKID/assets/learnmode.svg",
           "instruction": {
