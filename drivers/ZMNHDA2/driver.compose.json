@@ -43,6 +43,7 @@
     "associationGroups": [
       1,2,3,4
     ],
+    "includeSecure": false,
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {

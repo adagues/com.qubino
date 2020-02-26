@@ -1,5 +1,8 @@
 {
   "3.1.1": {
     "en": "Added maintenance actions for various devices (e.g. calibration and power measurement reset), fixed an issue with the RGBW Dimmer where color changes would not be correctly updated in the UI, fixed an issue with invalid dropdown values for input settings for the RGBW Dimmer, added a workaround for the Flush Dimmer 0 - 10V temperature reporting issue, improved app descriptions."
+  },
+  "3.1.2": {
+    "en": "Improved stability of adding Qubino devices to Homey."
   }
 }
