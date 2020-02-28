@@ -4,7 +4,7 @@ const { Util } = require('homey-meshdriver');
 
 const QubinoDimDevice = require('../../lib/QubinoDimDevice');
 const {
-  CAPABILITIES, COMMAND_CLASSES, FLOWS, SETTINGS,
+  CAPABILITIES, COMMAND_CLASSES, FLOWS,
 } = require('../../lib/constants');
 
 const COLOR_REPORT_DEBOUNCE_TIMEOUT = 500; // ms
@@ -46,30 +46,43 @@ class ZMNHQD extends QubinoDimDevice {
       },
     });
 
+    // Initialize Buzzer state
+    let BUZZER_STATE = this.getCapabilityValue(CAPABILITIES.ONOFF_BUZZER);
+
     // Register Alarm Buzzer onoff capability
     this.registerCapability(CAPABILITIES.ONOFF_BUZZER, COMMAND_CLASSES.SOUND_SWITCH, {
       get: 'SOUND_SWITCH_TONE_PLAY_GET',
       set: 'SOUND_SWITCH_TONE_PLAY_SET',
       getOpts: {
-      	getOnStart: true,
+        getOnStart: true,
       },
       setParserV1(value) {
+        BUZZER_STATE = value;
         return { 'Tone identifier': value ? 1 : 0 };
       },
       report: 'SOUND_SWITCH_TONE_PLAY_REPORT',
       reportParserV1: report => {
-      	if (report && report.hasOwnProperty('Tone Identifier')) {
-      		if (report['Tone Identifier'] === 1) {
-            this.driver.triggerFlow(FLOWS.BUZZER_TURNED_ON, this, {}, {}).catch(err => this.error('failed to trigger flow', FLOWS.BUZZER_TURNED_ON, err));
-            return true;
+        if (report && report.hasOwnProperty('Tone Identifier')) {
+          const parsedPayload = report['Tone Identifier'] === 1;
+          if (BUZZER_STATE !== parsedPayload) {
+            BUZZER_STATE = parsedPayload;
+            this.driver.triggerFlow(FLOWS[`BUZZER_TURNED_${BUZZER_STATE ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.BUZZER_TURNED_${BUZZER_STATE ? 'ON' : 'OFF'}`, err));
+            return BUZZER_STATE;
           }
-      		if (report['Tone Identifier'] === 0) {
-            this.driver.triggerFlow(FLOWS.BUZZER_TURNED_OFF, this, {}, {}).catch(err => this.error('failed to trigger flow', FLOWS.BUZZER_TURNED_OFF, err));
-            return false;
-          }
-      	}
-      	return null;
+        }
+        return null;
       },
+    });
+
+    this.registerReportListener(COMMAND_CLASSES.NOTIFICATION, COMMAND_CLASSES.NOTIFICATION_REPORT, report => {
+      if (report && report['Notification Type'] === 'Siren' && report.hasOwnProperty('Event')) {
+        const parsedPayload = report['Tone Identifier'] === 1;
+        if (BUZZER_STATE !== parsedPayload) {
+          BUZZER_STATE = BUZZER_STATE;
+          this.driver.triggerFlow(FLOWS[`BUZZER_TURNED_${BUZZER_STATE ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.BUZZER_TURNED_${BUZZER_STATE ? 'ON' : 'OFF'}`, err));
+          this.setCapabilityValue(CAPABILITIES.ONOFF_BUZZER, BUZZER_STATE);
+        }
+      }
     });
 
     // Register Alarm Buzzer volume capability
@@ -398,12 +411,6 @@ class ZMNHQD extends QubinoDimDevice {
     if (red === 0 && green === 0 && blue === 0) {
       // Colors where dimmed to zero so device is basically off, do not continue further
       return this.setCapabilityValue(CAPABILITIES.ONOFF, false);
-    }
-
-    if (this.getCapabilityValue(CAPABILITIES.ONOFF) === false && (red > 0 || green > 0 || blue > 0)) {
-
-      // Device was off but received color values that indicate device is on
-      // this.setCapabilityValue(CAPABILITIES.ONOFF, true);
     }
 
     // Get hue and saturation from RGB values
