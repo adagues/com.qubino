@@ -414,8 +414,8 @@
       {
         "id": "turnOnBuzzer_ZMNHQD",
         "title": {
-          "en": "Activate alarm buzzer",
-          "nl": "Schakel alarm buzzer in"
+          "en": "Activate buzzer",
+          "nl": "Schakel buzzer in"
         },
         "args": [
           {
@@ -428,8 +428,8 @@
       {
         "id": "turnOffBuzzer_ZMNHQD",
         "title": {
-          "en": "Deactivate alarm buzzer",
-          "nl": "Schakel alarm buzzer uit"
+          "en": "Deactivate buzzer",
+          "nl": "Schakel buzzer uit"
         },
         "args": [
           {
@@ -1674,8 +1674,8 @@
       {
         "id": "buzzerTurnedOn_ZMNHQD",
         "title": {
-          "en": "Alarm buzzer turned on",
-          "nl": "Alarm buzzer aangezet"
+          "en": "Buzzer turned on",
+          "nl": "Buzzer aangezet"
         },
         "args": [
           {
@@ -1688,8 +1688,8 @@
       {
         "id": "buzzerTurnedOff_ZMNHQD",
         "title": {
-          "en": "Alarm buzzer turned off",
-          "nl": "Alarm buzzer uitgezet"
+          "en": "Buzzer turned off",
+          "nl": "Buzzer uitgezet"
         },
         "args": [
           {
@@ -10359,23 +10359,22 @@
         },
         "volume_set": {
           "title": {
-            "en": "Set the alarm buzzer volume",
-            "nl": "Zet het alarm buzzer volume"
+            "en": "Set the buzzer volume",
+            "nl": "Zet het buzzer volume"
           }
         },
         "onoff.buzzer": {
           "title": {
-            "en": "Alarm buzzer turned on",
-            "nl": "Alarm buzzer aangezet"
+            "en": "Buzzer turned on",
+            "nl": "Buzzer aangezet"
           },
-          "preventInsights": true,
           "insightsTitleTrue": {
-            "en": "Alarm buzzer activated",
-            "nl": "Alarm buzzer geactiveerd"
+            "en": "Buzzer activated",
+            "nl": "Buzzer geactiveerd"
           },
           "insightsTitleFalse": {
-            "en": "Alarm buzzer deactivated",
-            "nl": "Alarm buzzer uitgeschakeld"
+            "en": "Buzzer deactivated",
+            "nl": "buzzer uitgeschakeld"
           }
         }
       },
@@ -10397,14 +10396,14 @@
         "learnmode": {
           "image": "/drivers/ZMNHQD/assets/learnmode.svg",
           "instruction": {
-            "en": "(Re-)activate full white (one press on (1)). \n\nWhen full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\nAfter 6 seconds, the LUXY Smart Light (ZMNHQD) starts flashing green 1 second on, 0.5 second off.\n\nOnce the device has been succesfully added (after 10 seconds), it stops flashing and turns full green.",
-            "nl": "(Her-)activeer volledig wit (een keer drukken op (1)). \n\nWanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\n\nNa 6 seconden zal LUXY Smart Light (ZMNHQD) groen gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n\n Wanneer toevoegen succesvol afgerond is (na 10 seconden), stopt het knipperen en wordt LED volledig groen."
+            "en": "(Re-)activate full white (one press on (1)). \nWhen full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \nAfter 6 seconds, the LUXY Smart Light (ZMNHQD) starts flashing green 1 second on, 0.5 second off.",
+            "nl": "(Her-)activeer volledig wit (een keer drukken op (1)). \nWanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\nNa 6 seconden zal LUXY Smart Light (ZMNHQD) groen gaan knipperen, 1 seconde aan, 0.5 seconde uit."
           }
         },
         "unlearnmode": {
           "instruction": {
-            "en": "Activate full white (one press on (1)). \n\nWhen full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\nAfter 6 seconds, LUXY Smart Light (ZMNHQD) starts flashing red 1 second on, 0.5 second off.\n\nWait until the device stops flashing and turns full red.",
-            "nl": "Activeer volledig wit (een keer drukken op (1)). \n\nWanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\n\nNa 6 seconden zal LUXY Smart Light (ZMNHQD) rood gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n\n Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
+            "en": "Activate full white (one press on (1)). \nWhen full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \nAfter 6 seconds, LUXY Smart Light (ZMNHQD) starts flashing red 1 second on, 0.5 second off.\nWait until the device stops flashing and turns full red.",
+            "nl": "Activeer volledig wit (een keer drukken op (1)). \nWanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\nNa 6 seconden zal LUXY Smart Light (ZMNHQD) rood gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
           },
           "image": "/drivers/ZMNHQD/assets/unlearnmode.svg"
         }
@@ -10572,29 +10571,29 @@
             "size": 1
           },
           "label": {
-            "en": "Turn off alarm buzzer",
-            "nl": "Uitschakelen alarm buzzer"
+            "en": "Turn off buzzer",
+            "nl": "Uitschakelen buzzer"
           },
           "value": "1",
           "values": [
             {
               "id": "0",
               "label": {
-                "en": "Only by Z-wave",
-                "nl": "Enkel door Z-wave"
+                "en": "Only by Homey (Z-wave)",
+                "nl": "Enkel door Homey (Z-wave)"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "Capacitive input & Z-wave",
-                "nl": "Capacitieve bedieningsknoppen & Z-wave"
+                "en": "Capacitive input & Homey (Z-wave)",
+                "nl": "Capacitieve bedieningsknoppen & Homey (Z-wave)"
               }
             }
           ],
           "hint": {
-            "en": "This parameter (3) determines how the alarm (buzzer) can be disabled.",
-            "nl": "Deze parameter (3) specificeert hoe het alarm (geluid) uitgeschakeld kan worden."
+            "en": "This parameter (3) determines how the buzzer can be disabled.",
+            "nl": "Deze parameter (3) specificeert hoe het geluid uitgeschakeld kan worden."
           }
         },
         {
@@ -10609,8 +10608,8 @@
             "nl": "Bewegingssensor uitschakeltijd"
           },
           "hint": {
-            "en": "This parameter (5) determines the time after which the output triggered by motion sensor is turned off. \n32535 – never turns off",
-            "nl": "Deze parameter (5) bepaalt de tijdsduur waarna de uitgang die ingeschakeld is doot de Bewegingssensor uitgeschakeld wordt. \n32535 – schakelt nooit uit"
+            "en": "This parameter (5) determines the time after which the output triggered by motion sensor is turned off. Setting the value to 32535 will result in the output never being turned off.",
+            "nl": "Deze parameter (5) bepaalt de tijdsduur waarna de uitgang die ingeschakeld is doot de Bewegingssensor uitgeschakeld wordt. Het instellen van de waarde op 32535 zorgt dat de uitgang nooit uitgeschakeld wordt."
           },
           "units": {
             "en": "s",
@@ -10620,6 +10619,39 @@
           "attr": {
             "min": 0,
             "max": 32535
+          }
+        },
+        {
+          "id": "buzzerFunction",
+          "type": "dropdown",
+          "zwave": {
+            "index": 3,
+            "size": 1
+          },
+          "label": {
+            "en": "Buzzer function",
+            "nl": "Buzzer functie"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Disabled (the buzzer is not active)",
+                "nl": "Uitgeschakeld (de buzzer is inactief)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Enabled (the buzzer is active)",
+                "nl": "ingeschakeld (de buzzer is actief)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "This parameter (3) affects buzzer function just in case when the device receive the NOTIFICATION_REPORT.",
+            "nl": "Deze parameter (3) specificeert de buzzer functie in het geval dat het apparaat een NOTIFICATION_REPORT ontvangt."
           }
         }
       ]
