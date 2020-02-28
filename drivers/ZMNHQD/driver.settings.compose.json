@@ -160,5 +160,38 @@
       "min": 0,
       "max": 32535
     }
+  },
+  {
+    "id": "buzzerFunction",
+    "type": "dropdown",
+    "zwave": {
+      "index": 3,
+      "size": 1
+    },
+    "label": {
+      "en": "Buzzer function",
+      "nl": "Buzzer functie"
+    },
+    "value": "1",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Disabled (the buzzer is not active)",
+          "nl": "Uitgeschakeld (de buzzer is inactief)"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Enabled (the buzzer is active)",
+          "nl": "ingeschakeld (de buzzer is actief)"
+        }
+      }
+    ],
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) affects buzzer function just in case when the device receive the NOTIFICATION_REPORT.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) specificeert de buzzer functie in het geval dat het apparaat een NOTIFICATION_REPORT ontvangt."
+    }
   }
 ]
