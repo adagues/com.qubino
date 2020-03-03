@@ -414,8 +414,8 @@
       {
         "id": "turnOnBuzzer_ZMNHQD",
         "title": {
-          "en": "Activate buzzer",
-          "nl": "Schakel buzzer in"
+          "en": "Turn on buzzer",
+          "nl": "Zet buzzer aan"
         },
         "args": [
           {
@@ -428,8 +428,8 @@
       {
         "id": "turnOffBuzzer_ZMNHQD",
         "title": {
-          "en": "Deactivate buzzer",
-          "nl": "Schakel buzzer uit"
+          "en": "Turn buzzer off",
+          "nl": "Zet buzzer uit"
         },
         "args": [
           {
@@ -10369,12 +10369,12 @@
             "nl": "Buzzer aangezet"
           },
           "insightsTitleTrue": {
-            "en": "Buzzer activated",
-            "nl": "Buzzer geactiveerd"
+            "en": "Buzzer turned on",
+            "nl": "Buzzer aangezet"
           },
           "insightsTitleFalse": {
-            "en": "Buzzer deactivated",
-            "nl": "buzzer uitgeschakeld"
+            "en": "Buzzer turned off",
+            "nl": "buzzer uitgezet"
           }
         }
       },
@@ -10396,14 +10396,14 @@
         "learnmode": {
           "image": "/drivers/ZMNHQD/assets/learnmode.svg",
           "instruction": {
-            "en": "(Re-)activate full white (one press on (1)). \nWhen full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \nAfter 6 seconds, the LUXY Smart Light (ZMNHQD) starts flashing green 1 second on, 0.5 second off.",
-            "nl": "(Her-)activeer volledig wit (een keer drukken op (1)). \nWanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\nNa 6 seconden zal LUXY Smart Light (ZMNHQD) groen gaan knipperen, 1 seconde aan, 0.5 seconde uit."
+            "en": "(Re-)activate full white (one press on (1)). \n\n1. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n2. After 6 seconds, the LUXY Smart Light (ZMNHQD) starts flashing green 1 second on, 0.5 second off.",
+            "nl": "(Her-)activeer volledig wit (een keer drukken op (1)). \n\n1. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\n\n2. Na 6 seconden zal LUXY Smart Light (ZMNHQD) groen gaan knipperen, 1 seconde aan, 0.5 seconde uit."
           }
         },
         "unlearnmode": {
           "instruction": {
-            "en": "Activate full white (one press on (1)). \nWhen full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \nAfter 6 seconds, LUXY Smart Light (ZMNHQD) starts flashing red 1 second on, 0.5 second off.\nWait until the device stops flashing and turns full red.",
-            "nl": "Activeer volledig wit (een keer drukken op (1)). \nWanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\nNa 6 seconden zal LUXY Smart Light (ZMNHQD) rood gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
+            "en": "Activate full white (one press on (1)). \n\n1. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n2. After 6 seconds, LUXY Smart Light (ZMNHQD) starts flashing red 1 second on, 0.5 second off.\n\n3. Wait until the device stops flashing and turns full red.",
+            "nl": "Activeer volledig wit (een keer drukken op (1)). \n\n1. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\n\n2. Na 6 seconden zal LUXY Smart Light (ZMNHQD) rood gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n\n3. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
           },
           "image": "/drivers/ZMNHQD/assets/unlearnmode.svg"
         }
@@ -10571,8 +10571,8 @@
             "size": 1
           },
           "label": {
-            "en": "Turn off buzzer",
-            "nl": "Uitschakelen buzzer"
+            "en": "Turn buzzer off",
+            "nl": "Buzzer uitschakelen"
           },
           "value": "1",
           "values": [
@@ -10592,8 +10592,8 @@
             }
           ],
           "hint": {
-            "en": "This parameter (3) determines how the buzzer can be disabled.",
-            "nl": "Deze parameter (3) specificeert hoe het geluid uitgeschakeld kan worden."
+            "en": "This parameter (3) determines how the buzzer can be turned off.",
+            "nl": "Deze parameter (3) specificeert hoe het buzzer uitgeschakeld kan worden."
           }
         },
         {
@@ -10609,7 +10609,7 @@
           },
           "hint": {
             "en": "This parameter (5) determines the time after which the output triggered by motion sensor is turned off. Setting the value to 32535 will result in the output never being turned off.",
-            "nl": "Deze parameter (5) bepaalt de tijdsduur waarna de uitgang die ingeschakeld is doot de Bewegingssensor uitgeschakeld wordt. Het instellen van de waarde op 32535 zorgt dat de uitgang nooit uitgeschakeld wordt."
+            "nl": "Deze parameter (5) bepaalt de tijdsduur waarna de uitgang die ingeschakeld is door de bewegingssensor uitgeschakeld wordt. Het instellen van de waarde op 32535 zorgt dat de uitgang nooit uitgeschakeld wordt."
           },
           "units": {
             "en": "s",
@@ -10623,35 +10623,19 @@
         },
         {
           "id": "buzzerFunction",
-          "type": "dropdown",
+          "type": "checkbox",
           "zwave": {
             "index": 3,
             "size": 1
           },
           "label": {
-            "en": "Buzzer function",
-            "nl": "Buzzer functie"
+            "en": "Buzzer enabled",
+            "nl": "Buzzer ingeschakeld"
           },
-          "value": "1",
-          "values": [
-            {
-              "id": "0",
-              "label": {
-                "en": "Disabled (the buzzer is not active)",
-                "nl": "Uitgeschakeld (de buzzer is inactief)"
-              }
-            },
-            {
-              "id": "1",
-              "label": {
-                "en": "Enabled (the buzzer is active)",
-                "nl": "ingeschakeld (de buzzer is actief)"
-              }
-            }
-          ],
+          "value": true,
           "hint": {
-            "en": "This parameter (3) affects buzzer function just in case when the device receive the NOTIFICATION_REPORT.",
-            "nl": "Deze parameter (3) specificeert de buzzer functie in het geval dat het apparaat een NOTIFICATION_REPORT ontvangt."
+            "en": "This parameter (3) enables or disables the buzzer in case when the device receives a NOTIFICATION_REPORT.",
+            "nl": "Deze parameter (3) schakelt de buzzer in of uit wanneer het apparaat een NOTIFICATION_REPORT ontvangt."
           }
         }
       ]

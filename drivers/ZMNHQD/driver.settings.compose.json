@@ -111,8 +111,8 @@
       "size": 1
     },
     "label": {
-      "en": "Turn off buzzer",
-      "nl": "Uitschakelen buzzer"
+      "en": "Turn buzzer off",
+      "nl": "Buzzer uitschakelen"
     },
     "value": "1",
     "values": [
@@ -132,8 +132,8 @@
       }
     ],
     "hint": {
-      "en": "This parameter ({{zwaveParameterIndex}}) determines how the buzzer can be disabled.",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) specificeert hoe het geluid uitgeschakeld kan worden."
+      "en": "This parameter ({{zwaveParameterIndex}}) determines how the buzzer can be turned off.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) specificeert hoe het buzzer uitgeschakeld kan worden."
     }
   },
   {
@@ -149,7 +149,7 @@
     },
     "hint": {
       "en": "This parameter ({{zwaveParameterIndex}}) determines the time after which the output triggered by motion sensor is turned off. Setting the value to 32535 will result in the output never being turned off.",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijdsduur waarna de uitgang die ingeschakeld is doot de Bewegingssensor uitgeschakeld wordt. Het instellen van de waarde op 32535 zorgt dat de uitgang nooit uitgeschakeld wordt."
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijdsduur waarna de uitgang die ingeschakeld is door de bewegingssensor uitgeschakeld wordt. Het instellen van de waarde op 32535 zorgt dat de uitgang nooit uitgeschakeld wordt."
     },
     "units": {
       "en": "s",
@@ -163,35 +163,19 @@
   },
   {
     "id": "buzzerFunction",
-    "type": "dropdown",
+    "type": "checkbox",
     "zwave": {
       "index": 3,
       "size": 1
     },
     "label": {
-      "en": "Buzzer function",
-      "nl": "Buzzer functie"
+      "en": "Buzzer enabled",
+      "nl": "Buzzer ingeschakeld"
     },
-    "value": "1",
-    "values": [
-      {
-        "id": "0",
-        "label": {
-          "en": "Disabled (the buzzer is not active)",
-          "nl": "Uitgeschakeld (de buzzer is inactief)"
-        }
-      },
-      {
-        "id": "1",
-        "label": {
-          "en": "Enabled (the buzzer is active)",
-          "nl": "ingeschakeld (de buzzer is actief)"
-        }
-      }
-    ],
+    "value": true,
     "hint": {
-      "en": "This parameter ({{zwaveParameterIndex}}) affects buzzer function just in case when the device receive the NOTIFICATION_REPORT.",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) specificeert de buzzer functie in het geval dat het apparaat een NOTIFICATION_REPORT ontvangt."
+      "en": "This parameter ({{zwaveParameterIndex}}) enables or disables the buzzer in case when the device receives a NOTIFICATION_REPORT.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) schakelt de buzzer in of uit wanneer het apparaat een NOTIFICATION_REPORT ontvangt."
     }
   }
 ]

@@ -37,12 +37,12 @@
         "nl": "Buzzer aangezet"
       },
       "insightsTitleTrue": {
-        "en": "Buzzer activated",
-        "nl": "Buzzer geactiveerd"
+        "en": "Buzzer turned on",
+        "nl": "Buzzer aangezet"
       },
       "insightsTitleFalse": {
-        "en": "Buzzer deactivated",
-        "nl": "buzzer uitgeschakeld"
+        "en": "Buzzer turned off",
+        "nl": "buzzer uitgezet"
       }
     }
   },
@@ -64,14 +64,14 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en":"(Re-)activate full white (one press on (1)). \nWhen full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \nAfter 6 seconds, the {{driverNameEn}} starts flashing green 1 second on, 0.5 second off.",
-        "nl": "(Her-)activeer volledig wit (een keer drukken op (1)). \nWanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\nNa 6 seconden zal {{driverNameNl}} groen gaan knipperen, 1 seconde aan, 0.5 seconde uit."
+        "en":"(Re-)activate full white (one press on (1)). \n\n1. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n2. After 6 seconds, the {{driverNameEn}} starts flashing green 1 second on, 0.5 second off.",
+        "nl": "(Her-)activeer volledig wit (een keer drukken op (1)). \n\n1. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\n\n2. Na 6 seconden zal {{driverNameNl}} groen gaan knipperen, 1 seconde aan, 0.5 seconde uit."
       }
     },
     "unlearnmode": {
       "instruction": {
-        "en": "Activate full white (one press on (1)). \nWhen full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \nAfter 6 seconds, {{driverNameEn}} starts flashing red 1 second on, 0.5 second off.\nWait until the device stops flashing and turns full red.",
-        "nl": "Activeer volledig wit (een keer drukken op (1)). \nWanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\nNa 6 seconden zal {{driverNameNl}} rood gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
+        "en": "Activate full white (one press on (1)). \n\n1. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n2. After 6 seconds, {{driverNameEn}} starts flashing red 1 second on, 0.5 second off.\n\n3. Wait until the device stops flashing and turns full red.",
+        "nl": "Activeer volledig wit (een keer drukken op (1)). \n\n1. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houdt ingedrukt tussen 4 en 6 seconden.\n\n2. Na 6 seconden zal {{driverNameNl}} rood gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n\n3. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
       },
       "image": "{{driverAssetsPath}}/unlearnmode.svg"
     }
