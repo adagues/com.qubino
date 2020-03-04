@@ -133,7 +133,7 @@
     ],
     "hint": {
       "en": "This parameter ({{zwaveParameterIndex}}) determines how the buzzer can be turned off.",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) specificeert hoe het buzzer uitgeschakeld kan worden."
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) specificeert hoe de buzzer uitgeschakeld kan worden."
     }
   },
   {
@@ -174,8 +174,8 @@
     },
     "value": true,
     "hint": {
-      "en": "This parameter ({{zwaveParameterIndex}}) enables or disables the buzzer in case when the device receives a NOTIFICATION_REPORT.",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) schakelt de buzzer in of uit wanneer het apparaat een NOTIFICATION_REPORT ontvangt."
+      "en": "This parameter ({{zwaveParameterIndex}}) determines if the buzzer will be turned on or off when receiving a NOTIFICATION_REPORT.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de buzzer in of uit geschakelt wordt wanneer een NOTIFICATION_REPORT wordt ontvangen."
     }
   }
 ]
