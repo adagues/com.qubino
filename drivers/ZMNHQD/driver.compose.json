@@ -24,13 +24,13 @@
         "duration": true
       }
     },
-    "volume_set":{
+    "volume_set": {
       "title": {
         "en": "Set the buzzer volume",
         "nl": "Stel het buzzer volume in"
       }
     },
-    "onoff.buzzer":{
+    "onoff.buzzer": {
       "title": {
         "en": "Buzzer turned on",
         "nl": "Buzzer aangezet"
@@ -46,11 +46,11 @@
     }
   },
   "energy": {
-		"approximation": {
-			"usageOn": 1.5,
-			"usageOff": 0
-		}
-	},
+    "approximation": {
+      "usageOn": 1.5,
+      "usageOff": 0
+    }
+  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 8,
@@ -62,7 +62,7 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en":"Activate full white (one press on (1)). \n\n1. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n2. After 6 seconds, the {{driverNameEn}} starts flashing green 1 second on, 0.5 second off.",
+        "en": "Activate full white (one press on (1)). \n\n1. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n2. After 6 seconds, the {{driverNameEn}} starts flashing green 1 second on, 0.5 second off.",
         "nl": "Activeer volledig wit (een keer drukken op (1)). \n\n1. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houd ingedrukt tussen 4 en 6 seconden.\n\n2. Na 6 seconden zal {{driverNameNl}} groen gaan knipperen, 1 seconde aan, 0.5 seconde uit."
       }
     },
