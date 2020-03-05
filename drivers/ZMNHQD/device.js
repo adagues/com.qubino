@@ -76,7 +76,7 @@ class ZMNHQD extends QubinoDimDevice {
 
     this.registerReportListener(COMMAND_CLASSES.NOTIFICATION, COMMAND_CLASSES.NOTIFICATION_REPORT, report => {
       if (report && report['Notification Type'] === 'Siren' && report.hasOwnProperty('Event')) {
-        const parsedPayload = report['Tone Identifier'] === 1;
+        const parsedPayload = report['Event'] === 1;
         if (buzzerState !== parsedPayload) {
           buzzerState = parsedPayload;
           this.driver.triggerFlow(FLOWS[`BUZZER_TURNED_${buzzerState ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.BUZZER_TURNED_${buzzerState ? 'ON' : 'OFF'}`, err));
