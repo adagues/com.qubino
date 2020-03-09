@@ -5,7 +5,7 @@
   },
   "sdk": 2,
   "version": "3.1.2",
-  "compatibility": ">=3.0.0",
+  "compatibility": ">=4.0.0",
   "brandColor": "#1784c7",
   "description": {
     "en": "Turn any home into a smart home with Qubino",
@@ -29,6 +29,10 @@
       {
         "name": "Martin Brasse",
         "email": "kasteleman@gmail.com"
+      },
+      {
+        "name": "Ted Tolboom",
+        "email": "dTNL.Homey@gmail.com"
       }
     ]
   }
