@@ -77,6 +77,18 @@
       },
       {
         "$extends": "controlTypeInput1"
+      },
+      {
+        "$extends": "sensorMinimumValueInput1"
+      },
+      {
+        "$extends": "sensorMaximumValueInput1"
+      },
+      {
+        "$extends": "sensorReportingThresholdInput1"
+      },
+      {
+        "$extends": "sensorTriggerThresholdInput1"
       }
     ]
   },
@@ -119,27 +131,6 @@
       },
       {
         "$extends": "temperatureSensorReportingThreshold"
-      }
-    ]
-  },
-  {
-    "type": "group",
-    "label": {
-      "en": "Input 1 sensor reporting",
-      "nl": "Ingang 1 sensor metingen"
-    },
-    "children": [
-      {
-        "$extends": "sensorMinimumValueInput1"
-      },
-      {
-        "$extends": "sensorMaximumValueInput1"
-      },
-      {
-        "$extends": "sensorReportingThresholdInput1"
-      },
-      {
-        "$extends": "sensorTriggerThresholdInput1"
       }
     ]
   },

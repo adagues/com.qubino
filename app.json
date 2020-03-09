@@ -11514,6 +11514,135 @@
                 "en": "This parameter (21) determines if the double click functionality is enabled; when enabled a quick double click of the connected switch will set the light to the highest dim level. Note: this parameter is only applied if input 1 is configured as a momentary switch.",
                 "nl": "Deze parameter (21) bepaalt of de dubbel klikken functionaliteit is ingeschakeld; wanneer ingeschakeld zal een snelle dubbele klik op de aangesloten schakelaar het licht op het hoogste dim niveau instellen. Let op: deze parameter is alleen van toepassing als ingang 1 is ingesteld als pulsdrukschakelaar."
               }
+            },
+            {
+              "id": "autoManualControl",
+              "type": "dropdown",
+              "label": {
+                "en": "Control type",
+                "nl": "Aansturing"
+              },
+              "zwave": {
+                "index": 52,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Manual/disabled",
+                    "nl": "Handmatig/uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Automatic",
+                    "nl": "Automatisch"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (52) determines how the input should control the output (manual=disabled or automatic=output follows input using PID).\n\nNote: This parameter is only relevant when the input type parameter (1) is configured at a 0-10V sensor (values 3, 4 and 5).",
+                "nl": "Deze parameter (52) bepaalt hoe de ingang de uitgang aanstuurt (handmatig=niet of automatisch=uitgang volgt ingang middels PID).\n\nLet op: Deze parameter is alleen relevant wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
+              }
+            },
+            {
+              "id": "sensorMinimumValueInput1",
+              "type": "number",
+              "label": {
+                "en": "Minimum sensor value",
+                "nl": "Minimale sensor niveau"
+              },
+              "units": {
+                "en": "°C/Lux/%",
+                "nl": "°C/Lux/%"
+              },
+              "zwave": {
+                "index": 143,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 20000
+              },
+              "hint": {
+                "en": "This parameter (143) must correspond with the minimum sensor range value.\n\nNote: the minimum sensor value may not be higher than the maximum sensor value. This parameter only applies when the input type parameter (1) is configured for a 0-10V sensor (values 3, 4 and 5).",
+                "nl": "Deze parameter (143) moet overeenkomen met de minimale sensor waarde.\n\nLet op: de minimale sensor waarde mag niet hoger zijn dan de maximale sensor waarde. Deze parameter wordt alleen gebruikt wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
+              }
+            },
+            {
+              "id": "sensorMaximumValueInput1",
+              "type": "number",
+              "label": {
+                "en": "Maximum sensor value",
+                "nl": "Maximale sensor niveau"
+              },
+              "units": {
+                "en": "°C/Lux/%",
+                "nl": "°C/Lux/%"
+              },
+              "zwave": {
+                "index": 144,
+                "size": 2
+              },
+              "value": 1000,
+              "attr": {
+                "min": 0,
+                "max": 20000
+              },
+              "hint": {
+                "en": "This parameter (144) must correspond with the maximum sensor range value.\n\nNote: the maximum sensor value may not be higher than the minimum sensor value. This parameter only applies when the input type parameter (1) is configured for a 0-10V sensor (values 3, 4 and 5).",
+                "nl": "Deze parameter (144) moet overeenkomen met de maximale sensor waarde.\n\nLet op: de maximale sensor waarde mag niet hoger zijn dan de minimale sensor waarde. Deze parameter wordt alleen gebruikt wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
+              }
+            },
+            {
+              "id": "sensorReportingThresholdInput1",
+              "type": "number",
+              "label": {
+                "en": "Sensor update on input change",
+                "nl": "Sensor update bij ingang verandering van"
+              },
+              "zwave": {
+                "index": 140,
+                "size": 2
+              },
+              "value": 5,
+              "attr": {
+                "min": 0,
+                "max": 10000
+              },
+              "hint": {
+                "en": "This parameter (140) defines the relative threshold which when exceeded will result in a sensor value update being send to Homey. Note: setting this parameter to 0 disables sensor reports completely.\n\nNote: This parameter only applies when the input type parameter (1) is configured for a 0-10V sensor (values 3, 4 and 5).",
+                "nl": "Deze parameter (140) bepaalt de relatieve verandering die overschreden moet worden voordat een sensor waarde update wordt verstuurd naar Homey. Let op: het instellen van deze parameter op 0 schakelt sensor reports volledig uit.\n\nLet op: Deze parameter wordt alleen gebruikt wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
+              }
+            },
+            {
+              "id": "sensorTriggerThresholdInput1",
+              "type": "number",
+              "label": {
+                "en": "Input 1 sensor update threshold",
+                "nl": "Input 1 sensor update drempelwaarde"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 141,
+                "size": 1
+              },
+              "value": 5,
+              "attr": {
+                "min": 1,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (141) defines the threshold (percentage) which when exceeded will result in a basic set on association group 2.\n\nNote: This parameter only applies when the input type parameter (1) is configured for a 0-10V sensor (values 3, 4 and 5).",
+                "nl": "Deze parameter (141) bepaalt de drempel (in procenten) die overschreden moet worden voordat een basic set wordt verstuurd naar associatiegroep 2.\n\nLet op: Deze parameter wordt alleen gebruikt wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
+              }
             }
           ]
         },
