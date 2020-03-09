@@ -5,7 +5,7 @@
   },
   "sdk": 2,
   "version": "3.1.2",
-  "compatibility": ">=3.0.0",
+  "compatibility": ">=4.0.0",
   "brandColor": "#1784c7",
   "description": {
     "en": "Turn any home into a smart home with Qubino",
@@ -29,6 +29,10 @@
       {
         "name": "Martin Brasse",
         "email": "kasteleman@gmail.com"
+      },
+      {
+        "name": "Ted Tolboom",
+        "email": "dTNL.Homey@gmail.com"
       }
     ]
   },
@@ -404,6 +408,34 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHOD"
+          }
+        ]
+      },
+      {
+        "id": "turnOnBuzzer_ZMNHQD",
+        "title": {
+          "en": "Turn on buzzer",
+          "nl": "Zet buzzer aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHQD"
+          }
+        ]
+      },
+      {
+        "id": "turnOffBuzzer_ZMNHQD",
+        "title": {
+          "en": "Turn buzzer off",
+          "nl": "Zet buzzer uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHQD"
           }
         ]
       },
@@ -1636,6 +1668,34 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHND1"
+          }
+        ]
+      },
+      {
+        "id": "buzzerTurnedOn_ZMNHQD",
+        "title": {
+          "en": "Buzzer turned on",
+          "nl": "Buzzer aangezet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHQD"
+          }
+        ]
+      },
+      {
+        "id": "buzzerTurnedOff_ZMNHQD",
+        "title": {
+          "en": "Buzzer turned off",
+          "nl": "Buzzer uitgezet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHQD"
           }
         ]
       },
@@ -10267,6 +10327,315 @@
               }
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "LUXY Smart Light (ZMNHQD)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHQD/assets/images/large.png",
+        "small": "/drivers/ZMNHQD/assets/images/small.png"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "onoff.buzzer",
+        "volume_set"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        },
+        "volume_set": {
+          "title": {
+            "en": "Set the buzzer volume",
+            "nl": "Stel het buzzer volume in"
+          }
+        },
+        "onoff.buzzer": {
+          "title": {
+            "en": "Buzzer turned on",
+            "nl": "Buzzer aangezet"
+          },
+          "insightsTitleTrue": {
+            "en": "Buzzer turned on",
+            "nl": "Buzzer aangezet"
+          },
+          "insightsTitleFalse": {
+            "en": "Buzzer turned off",
+            "nl": "buzzer uitgezet"
+          }
+        }
+      },
+      "energy": {
+        "approximation": {
+          "usageOn": 1.5,
+          "usageOff": 0
+        }
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 8,
+        "productId": 81,
+        "includeSecure": false,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHQD/assets/learnmode.svg",
+          "instruction": {
+            "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, LUXY Smart Light (ZMNHQD) starts flashing red 1 second on, 0.5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
+            "nl": "1. Activeer volledig wit (een keer drukken op (1)). \n\n2. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houd ingedrukt tussen 4 en 6 seconden.\n\n3. Na 6 seconden zal LUXY Smart Light (ZMNHQD) rood gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n\n4. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
+          }
+        },
+        "unlearnmode": {
+          "image": "/drivers/ZMNHQD/assets/unlearnmode.svg",
+          "instruction": {
+            "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, LUXY Smart Light (ZMNHQD) starts flashing red 1 second on, 0.5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
+            "nl": "1. Activeer volledig wit (een keer drukken op (1)). \n\n2. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houd ingedrukt tussen 4 en 6 seconden.\n\n3. Na 6 seconden zal LUXY Smart Light (ZMNHQD) rood gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n\n4. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
+          }
+        }
+      },
+      "id": "ZMNHQD",
+      "settings": [
+        {
+          "zwave": {
+            "index": 11,
+            "size": 2
+          },
+          "id": "autoOff",
+          "type": "number",
+          "label": {
+            "en": "Turn off automatically",
+            "nl": "Schakel automatisch uit"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "hint": {
+            "en": "This parameter (11) defines the time after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "zwave": {
+            "index": 10,
+            "size": 2
+          },
+          "id": "autoOn",
+          "type": "number",
+          "label": {
+            "en": "Turn on automatically",
+            "nl": "Schakel automatisch in"
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "hint": {
+            "en": "This parameter (10) defines the time after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (10) bepaalt de tijd waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+          }
+        },
+        {
+          "id": "restoreStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Restore light state after power failure",
+            "nl": "Herstel licht status na stroomonderbreking"
+          },
+          "zwave": {
+            "index": 30,
+            "size": 1
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (30) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+            "nl": "Deze parameter (30) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "id": "digitalInputType",
+              "type": "dropdown",
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "label": {
+                "en": "Input type",
+                "nl": "Ingang type"
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Motion sensor",
+                    "nl": "Bewegingssensor"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Motion sensor with timer",
+                    "nl": "Bewegingssensor met timer"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (1) determines the type of device connected to input 1 of the Luxy Smart Light (ZMNHQD).",
+                "nl": "Deze parameter (1) specificeert het type apparaat dat is aangesloten op ingang 1 van de Luxy Smart Light (ZMNHQD)."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Dimming",
+            "nl": "Dimmen"
+          },
+          "children": [
+            {
+              "id": "dimDuration",
+              "type": "number",
+              "label": {
+                "en": "Dim duration",
+                "nl": "Dim duur"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 1,
+              "attr": {
+                "min": 1,
+                "max": 7620,
+                "step": 1
+              },
+              "hint": {
+                "en": "This setting determines the time (in seconds) it takes to move between the maximum and minimum dim values when controlled via Homey.",
+                "nl": "Deze in bepaalt de tijd (in seconden) die nodig is voor het dimmen van het maximale naar het minimale dim niveau wanneer aangestuurd via Homey."
+              }
+            }
+          ]
+        },
+        {
+          "id": "turnOffAlarm",
+          "type": "dropdown",
+          "zwave": {
+            "index": 3,
+            "size": 1
+          },
+          "label": {
+            "en": "Turn buzzer off",
+            "nl": "Buzzer uitschakelen"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Only by Homey (Z-wave)",
+                "nl": "Enkel door Homey (Z-wave)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Capacitive input & Homey (Z-wave)",
+                "nl": "Capacitieve bedieningsknoppen & Homey (Z-wave)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "This parameter (3) determines how the buzzer can be turned off.",
+            "nl": "Deze parameter (3) specificeert hoe de buzzer uitgeschakeld kan worden."
+          }
+        },
+        {
+          "id": "motionSensorMemoryTimer",
+          "type": "number",
+          "zwave": {
+            "index": 5,
+            "size": 2
+          },
+          "label": {
+            "en": "Motion sensor switch off timer",
+            "nl": "Bewegingssensor uitschakeltijd"
+          },
+          "hint": {
+            "en": "This parameter (5) determines the time after which the output triggered by motion sensor is turned off. Setting the value to 32535 will result in the output never being turned off.",
+            "nl": "Deze parameter (5) bepaalt de tijdsduur waarna de uitgang die ingeschakeld is door de bewegingssensor uitgeschakeld wordt. Het instellen van de waarde op 32535 zorgt dat de uitgang nooit uitgeschakeld wordt."
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 10,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          }
+        },
+        {
+          "id": "buzzerFunction",
+          "type": "checkbox",
+          "zwave": {
+            "index": 3,
+            "size": 1
+          },
+          "label": {
+            "en": "Buzzer enabled",
+            "nl": "Buzzer ingeschakeld"
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (3) determines if the buzzer will be turned on or off when receiving a NOTIFICATION_REPORT.",
+            "nl": "Deze parameter (3) bepaalt of de buzzer in of uit geschakelt wordt wanneer een NOTIFICATION_REPORT wordt ontvangen."
+          }
         }
       ]
     },

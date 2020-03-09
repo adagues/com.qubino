@@ -1,0 +1,7 @@
+{
+  "$id": "buzzerTurnedOn_{{driverId}}",
+  "title": {
+    "en": "Buzzer turned on",
+    "nl": "Buzzer aangezet"
+  }
+}
