@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "label": {
+    "en": "Minimum sensor value",
+    "nl": "Minimale sensor niveau"
+  },
+  "units": {
+    "en": "°C/Lux/%",
+    "nl": "°C/Lux/%"
+  },
+  "zwave": {
+    "index": 143,
+    "size": 2
+  },
+  "value": 0,
+  "attr": {
+    "min": 0,
+    "max": 20000
+  },
+  "hint": {
+    "en": "This parameter ({{zwaveParameterIndex}}) must correspond with the minimum sensor range value.\n\nNote: the minimum sensor value may not be higher than the maximum sensor value. This parameter only applies when the input type parameter (1) is configured for a 0-10V sensor (values 3, 4 and 5).",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) moet overeenkomen met de minimale sensor waarde.\n\nLet op: de minimale sensor waarde mag niet hoger zijn dan de maximale sensor waarde. Deze parameter wordt alleen gebruikt wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "number",
+  "label": {
+    "en": "Sensor update on input change",
+    "nl": "Sensor update bij ingang verandering van"
+  },
+  "zwave": {
+    "index": 140,
+    "size": 2
+  },
+  "value": 5,
+  "attr": {
+    "min": 0,
+    "max": 10000
+  },
+  "hint": {
+    "en": "This parameter ({{zwaveParameterIndex}}) defines the relative threshold which when exceeded will result in a sensor value update being send to Homey. Note: setting this parameter to 0 disables sensor reports completely.\n\nNote: This parameter only applies when the input type parameter (1) is configured for a 0-10V sensor (values 3, 4 and 5).",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de relatieve verandering die overschreden moet worden voordat een sensor waarde update wordt verstuurd naar Homey. Let op: het instellen van deze parameter op 0 schakelt sensor reports volledig uit.\n\nLet op: Deze parameter wordt alleen gebruikt wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
+  }
+}

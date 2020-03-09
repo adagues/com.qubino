@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "label": {
+    "en": "Input 1 sensor update threshold",
+    "nl": "Input 1 sensor update drempelwaarde"
+  },
+  "units": {
+    "en": "%",
+    "nl": "%"
+  },
+  "zwave": {
+    "index": 141,
+    "size": 1
+  },
+  "value": 5,
+  "attr": {
+    "min": 1,
+    "max": 100
+  },
+  "hint": {
+    "en": "This parameter ({{zwaveParameterIndex}}) defines the threshold (percentage) which when exceeded will result in a basic set on association group 2.\n\nNote: This parameter only applies when the input type parameter (1) is configured for a 0-10V sensor (values 3, 4 and 5).",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de drempel (in procenten) die overschreden moet worden voordat een basic set wordt verstuurd naar associatiegroep 2.\n\nLet op: Deze parameter wordt alleen gebruikt wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
+  }
+}

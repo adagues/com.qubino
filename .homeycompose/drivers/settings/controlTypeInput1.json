@@ -1,0 +1,33 @@
+{
+  "id": "autoManualControl",
+  "type": "dropdown",
+  "label": {
+    "en": "Control type",
+    "nl": "Aansturing"
+  },
+  "zwave": {
+    "index": 52,
+    "size": 1
+  },
+  "value": "0",
+  "values": [
+    {
+      "id": "0",
+      "label": {
+        "en": "Manual/disabled",
+        "nl": "Handmatig/uitgeschakeld"
+      }
+    },
+    {
+      "id": "1",
+      "label": {
+        "en": "Automatic",
+        "nl": "Automatisch"
+      }
+    }
+  ],
+  "hint": {
+    "en": "This parameter ({{zwaveParameterIndex}}) determines how the input should control the output (manual=disabled or automatic=output follows input using PID).\n\nNote: This parameter is only relevant when the input type parameter (1) is configured at a 0-10V sensor (values 3, 4 and 5).",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt hoe de ingang de uitgang aanstuurt (handmatig=niet of automatisch=uitgang volgt ingang middels PID).\n\nLet op: Deze parameter is alleen relevant wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
+  }
+}
