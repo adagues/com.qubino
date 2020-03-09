@@ -4,5 +4,8 @@
   },
   "3.1.2": {
     "en": "Improved stability of adding Qubino devices to Homey."
+  },
+  "3.2.0": {
+    "en": "Added support for LUXY Smart Light (ZMNHQD), improved sensor settings for Flush Dimmer 0 - 10V (ZMNHVD)."
   }
 }
