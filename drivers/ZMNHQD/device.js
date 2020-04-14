@@ -21,6 +21,8 @@ class ZMNHQD extends QubinoDimDevice {
    * @private
    */
   async registerCapabilities() {
+    this.printNode();
+    
     // Keep track of color reports
     this._colorReportsQueue = [];
 
