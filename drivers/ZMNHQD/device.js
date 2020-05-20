@@ -47,7 +47,7 @@ class ZMNHQD extends QubinoDimDevice {
     });
 
     // Initialize Buzzer state
-    let buzzerState = this.getCapabilityValue(CAPABILITIES.ONOFF_BUZZER);
+    let reportedBuzzerState = this.getCapabilityValue(CAPABILITIES.ONOFF_BUZZER);
 
     // Register Alarm Buzzer onoff capability
     this.registerCapability(CAPABILITIES.ONOFF_BUZZER, COMMAND_CLASSES.SOUND_SWITCH, {
@@ -57,17 +57,16 @@ class ZMNHQD extends QubinoDimDevice {
         getOnStart: true,
       },
       setParserV1(value) {
-        buzzerState = value;
         return { 'Tone identifier': value ? 1 : 0 };
       },
       report: 'SOUND_SWITCH_TONE_PLAY_REPORT',
       reportParserV1: report => {
         if (report && report.hasOwnProperty('Tone Identifier')) {
           const parsedPayload = report['Tone Identifier'] === 1;
-          if (buzzerState !== parsedPayload) {
-            buzzerState = parsedPayload;
-            this.driver.triggerFlow(FLOWS[`BUZZER_TURNED_${buzzerState ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.BUZZER_TURNED_${buzzerState ? 'ON' : 'OFF'}`, err));
-            return buzzerState;
+          if (reportedBuzzerState !== parsedPayload) {
+            reportedBuzzerState = parsedPayload;
+            this.driver.triggerFlow(FLOWS[`BUZZER_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.BUZZER_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`, err));
+            return reportedBuzzerState;
           }
         }
         return null;
@@ -77,10 +76,10 @@ class ZMNHQD extends QubinoDimDevice {
     this.registerReportListener(COMMAND_CLASSES.NOTIFICATION, COMMAND_CLASSES.NOTIFICATION_REPORT, report => {
       if (report && report['Notification Type'] === 'Siren' && report.hasOwnProperty('Event')) {
         const parsedPayload = report['Event'] === 1;
-        if (buzzerState !== parsedPayload) {
-          buzzerState = parsedPayload;
-          this.driver.triggerFlow(FLOWS[`BUZZER_TURNED_${buzzerState ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.BUZZER_TURNED_${buzzerState ? 'ON' : 'OFF'}`, err));
-          this.setCapabilityValue(CAPABILITIES.ONOFF_BUZZER, buzzerState);
+        if (reportedBuzzerState !== parsedPayload) {
+          reportedBuzzerState = parsedPayload;
+          this.driver.triggerFlow(FLOWS[`BUZZER_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.BUZZER_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`, err));
+          this.setCapabilityValue(CAPABILITIES.ONOFF_BUZZER, reportedBuzzerState);
         }
       }
     });
