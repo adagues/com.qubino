@@ -69,23 +69,6 @@ class ZMNKAD extends QubinoDimDevice {
     // Fetch capability values from device
     await this._getCapabilityValuesOnStart();
   }
-  /*
-    if (!this._isRootNode() && this.hasCapability(CAPABILITIES.METER_POWER)) {
-      this.log('TEST registering RELAY capabilities', this.node.deviceClassGeneric);
-      if (this.hasCapability(CAPABILITIES.METER_POWER)) this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
-      if (this.hasCapability(CAPABILITIES.MEASURE_POWER)) this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
-      if (this.hasCapability(CAPABILITIES.ONOFF)) this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
-      if (this.hasCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION)) {
-        this.registerCapabilityListener(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION, async () => {
-        // Maintenance action button was pressed, return a promise
-          if (typeof this.resetMeter === 'function') return this.resetMeter({ multiChannelNodeId: this.node.multiChannelNodeId });
-          this.error('Reset meter failed');
-          throw new Error('Reset meter not supported');
-        });
-      }
-    }
-
-    */
 
   /**
    * Method that determines if current node is root node.
