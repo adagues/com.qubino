@@ -4,7 +4,7 @@
     "en": "Qubino"
   },
   "sdk": 2,
-  "version": "3.2.1",
+  "version": "3.2.2",
   "compatibility": ">=4.0.0",
   "brandColor": "#1784c7",
   "description": {
@@ -490,34 +490,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHYD"
-          }
-        ]
-      },
-      {
-        "id": "turnOnBuzzer_ZMNKAD",
-        "title": {
-          "en": "Turn on buzzer",
-          "nl": "Zet buzzer aan"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNKAD"
-          }
-        ]
-      },
-      {
-        "id": "turnOffBuzzer_ZMNKAD",
-        "title": {
-          "en": "Turn buzzer off",
-          "nl": "Zet buzzer uit"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNKAD"
           }
         ]
       },
@@ -1728,10 +1700,38 @@
         ]
       },
       {
-        "id": "buzzerTurnedOn_ZMNKAD",
+        "id": "alarmModeTurnedOn_ZMNHQD",
         "title": {
-          "en": "Buzzer turned on",
-          "nl": "Buzzer aangezet"
+          "en": "Alarm mode turned on",
+          "nl": "Alarm toestand aangezet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHQD"
+          }
+        ]
+      },
+      {
+        "id": "alarmModeTurnedOff_ZMNHQD",
+        "title": {
+          "en": "Alarm mode turned off",
+          "nl": "Alarm toestand uitgezet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHQD"
+          }
+        ]
+      },
+      {
+        "id": "alarmModeTurnedOn_ZMNKAD",
+        "title": {
+          "en": "Alarm mode turned on",
+          "nl": "Alarm toestand aangezet"
         },
         "args": [
           {
@@ -1742,10 +1742,10 @@
         ]
       },
       {
-        "id": "buzzerTurnedOff_ZMNKAD",
+        "id": "alarmModeTurnedOff_ZMNKAD",
         "title": {
-          "en": "Buzzer turned off",
-          "nl": "Buzzer uitgezet"
+          "en": "Alarm mode turned off",
+          "nl": "Alarm toestand uitgezet"
         },
         "args": [
           {
