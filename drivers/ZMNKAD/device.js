@@ -479,7 +479,7 @@ class ZMNKAD extends QubinoDimDevice {
     // Fix broken CC_SWITCH_COLOR_V2 parser
     if (SwitchColorVersion >= 2) {
       this.log('_sendColors() -> create buffer manually');
-      setCommand = new Buffer([setCommand.Properties1['Color Component Count'], 2, setCommand.vg1[0].Value, 3, setCommand.vg1[1].Value, 4, setCommand.vg1[2].Value, 255]);
+      setCommand = Buffer.from([setCommand.Properties1['Color Component Count'], 2, setCommand.vg1[0].Value, 3, setCommand.vg1[1].Value, 4, setCommand.vg1[2].Value, 255]);
     }
     return this.node.CommandClass.COMMAND_CLASS_SWITCH_COLOR.SWITCH_COLOR_SET(setCommand);
   }
