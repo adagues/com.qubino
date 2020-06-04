@@ -1,17 +1,9 @@
 { "triggers":[
   {
-    "$extends": "buzzerTurnedOn"
+    "$extends": "alarmModeTurnedOn"
   },
   {
-    "$extends": "buzzerTurnedOff"
+    "$extends": "alarmModeTurnedOff"
   }
-  ],
-  "actions": [
-    {
-      "$extends": "turnOnBuzzer"
-    },
-    {
-      "$extends": "turnOffBuzzer"
-    }
   ]
 }

@@ -22,7 +22,7 @@ class ZMNHQD extends QubinoDimDevice {
    */
   async registerCapabilities() {
     this.printNode();
-    
+
     // Keep track of color reports
     this._colorReportsQueue = [];
 
@@ -78,6 +78,9 @@ class ZMNHQD extends QubinoDimDevice {
     this.registerReportListener(COMMAND_CLASSES.NOTIFICATION, COMMAND_CLASSES.NOTIFICATION_REPORT, report => {
       if (report && report['Notification Type'] === 'Siren' && report.hasOwnProperty('Event')) {
         const parsedPayload = report['Event'] === 1;
+        // trigger Alarm mode trigger card
+        this.driver.triggerFlow(FLOWS[`ALARM_MODE_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.ALARM_MODE_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`, err));
+        // trigger Buzzer state trigger card only if buzzer state changed
         if (reportedBuzzerState !== parsedPayload) {
           reportedBuzzerState = parsedPayload;
           this.driver.triggerFlow(FLOWS[`BUZZER_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.BUZZER_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`, err));
