@@ -49,24 +49,6 @@
       1
     ],
     "multiChannelNodes": {
-      "1": {
-        "class": "light",
-        "capabilities": [
-          "onoff",
-          "dim",
-          "light_hue",
-          "light_saturation"
-        ],
-
-        "icon": "{{driverAssetsPath}}/icon.svg",
-        "name": {
-          "en": "{{driverNameEn}} - Light",
-          "nl": "{{driverNameNl}} - Licht"
-        },
-        "settings": []
-      }
-    },
-    "multiChannelNodes": {
       "2": {
         "class": "socket",
         "capabilities": [

@@ -49,7 +49,7 @@ class ZMNKAD extends QubinoDimDevice {
       });
 
       // Register report listener for switch color command class, the reports are debounced
-      this.registerMultiChannelReportListener(1, COMMAND_CLASSES.SWITCH_COLOR, COMMAND_CLASSES.SWITCH_COLOR_REPORT, report => {
+      this.registerReportListener(COMMAND_CLASSES.SWITCH_COLOR, COMMAND_CLASSES.SWITCH_COLOR_REPORT, report => {
         if (this._colorReportDebounce) clearTimeout(this._colorReportDebounce);
         this._colorReportsQueue.push(report);
         this._colorReportDebounce = setTimeout(this._debouncedColorReportListener.bind(this), COLOR_REPORT_DEBOUNCE_TIMEOUT);
@@ -59,7 +59,7 @@ class ZMNKAD extends QubinoDimDevice {
       this.registerMultipleCapabilityListener([CAPABILITIES.ONOFF, CAPABILITIES.DIM, CAPABILITIES.LIGHT_HUE, CAPABILITIES.LIGHT_SATURATION], this._multipleCapabilitiesHandler.bind(this), MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT);
 
       // Register reportListener to trigger alarm mode trigger card
-      this.registerMultiChannelReportListener(1, COMMAND_CLASSES.NOTIFICATION, COMMAND_CLASSES.NOTIFICATION_REPORT, report => {
+      this.registerReportListener(COMMAND_CLASSES.NOTIFICATION, COMMAND_CLASSES.NOTIFICATION_REPORT, report => {
         this.log('COMMAND_CLASSES.NOTIFICATION_REPORT', report, report['Notification Type'], report['Event']);
         if (report && report['Notification Type'] === 'Siren' && report.hasOwnProperty('Event')) {
           const parsedPayload = report['Event'] === 1;
