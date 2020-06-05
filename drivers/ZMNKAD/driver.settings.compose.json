@@ -46,8 +46,8 @@
       "size": 1
     },
     "label": {
-      "en": "Turn buzzer off",
-      "nl": "Buzzer uitschakelen"
+      "en": "Turn alarm mode off",
+      "nl": "Alarm status uitschakelen"
     },
     "value": "1",
     "values": [
