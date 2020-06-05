@@ -37,516 +37,41 @@
     ]
   },
   "flow": {
-    "actions": [
+    "triggers": [
       {
-        "id": "resetMeter_ZMNHBD1",
         "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          "en": "Alarm mode turned off",
+          "nl": "Alarm toestand uitgezet"
         },
         "args": [
           {
             "name": "device",
             "type": "device",
             "filter": {
-              "driver_id": "ZMNHBD1",
-              "flags": "zwaveMultiChannel"
+              "driver_id": "ZMNKAD|ZMNHQD",
+              "flags": "zwaveRoot"
             }
           }
-        ]
+        ],
+        "id": "alarmModeTurnedOff"
       },
       {
-        "id": "resetMeter_ZMNHAA2",
         "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          "en": "Alarm mode turned on",
+          "nl": "Alarm toestand aangezet"
         },
         "args": [
           {
-            "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHAA2"
+            "type": "device",
+            "filter": {
+              "driver_id": "ZMNKAD|ZMNHQD",
+              "flags": "zwaveRoot"
+            }
           }
-        ]
+        ],
+        "id": "alarmModeTurnedOn"
       },
-      {
-        "id": "resetMeter_ZMNHAD1",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHAD1"
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHBA2",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHBA2"
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHCD",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHCD"
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHDA2",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHDA2"
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHDD1",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHDD1"
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHHD",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHHD"
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHIA2",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHIA2"
-          }
-        ]
-      },
-      {
-        "id": "setOffAutoThermostatMode_ZMNHIA2",
-        "title": {
-          "en": "Change thermostat mode",
-          "nl": "Stel thermostaat modus in"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHIA2"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto",
-                  "nl": "Auto"
-                }
-              },
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHID",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHID"
-          }
-        ]
-      },
-      {
-        "id": "setOffAutoThermostatMode_ZMNHID",
-        "title": {
-          "en": "Change thermostat mode",
-          "nl": "Stel thermostaat modus in"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHID"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto",
-                  "nl": "Auto"
-                }
-              },
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHKD1",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHKD1"
-          }
-        ]
-      },
-      {
-        "id": "setOffAutoThermostatMode_ZMNHKD1",
-        "title": {
-          "en": "Change thermostat mode",
-          "nl": "Stel thermostaat modus in"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHKD1"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto",
-                  "nl": "Auto"
-                }
-              },
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHLD",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHLD"
-          }
-        ]
-      },
-      {
-        "id": "setOffAutoThermostatMode_ZMNHLD",
-        "title": {
-          "en": "Change thermostat mode",
-          "nl": "Stel thermostaat modus in"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHLD"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto",
-                  "nl": "Auto"
-                }
-              },
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHOD",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHOD"
-          }
-        ]
-      },
-      {
-        "id": "turnOnBuzzer_ZMNHQD",
-        "title": {
-          "en": "Turn on buzzer",
-          "nl": "Zet buzzer aan"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHQD"
-          }
-        ]
-      },
-      {
-        "id": "turnOffBuzzer_ZMNHQD",
-        "title": {
-          "en": "Turn buzzer off",
-          "nl": "Zet buzzer uit"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHQD"
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHSD1",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHSD1"
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHTD1",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHTD1"
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNHYD",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHYD"
-          }
-        ]
-      },
-      {
-        "id": "resetMeter_ZMNKID",
-        "title": {
-          "en": "Reset power meter",
-          "nl": "Stel stroomverbuik opnieuw in"
-        },
-        "hint": {
-          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNKID"
-          }
-        ]
-      },
-      {
-        "id": "setOffAutoThermostatMode_ZMNKID",
-        "title": {
-          "en": "Change thermostat mode",
-          "nl": "Stel thermostaat modus in"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNKID"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto",
-                  "nl": "Auto"
-                }
-              },
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off",
-                  "nl": "Uit"
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "triggers": [
       {
         "hint": null,
         "id": "ZMNHAA2_I2_on",
@@ -1700,62 +1225,6 @@
         ]
       },
       {
-        "id": "alarmModeTurnedOn_ZMNHQD",
-        "title": {
-          "en": "Alarm mode turned on",
-          "nl": "Alarm toestand aangezet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHQD"
-          }
-        ]
-      },
-      {
-        "id": "alarmModeTurnedOff_ZMNHQD",
-        "title": {
-          "en": "Alarm mode turned off",
-          "nl": "Alarm toestand uitgezet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHQD"
-          }
-        ]
-      },
-      {
-        "id": "alarmModeTurnedOn_ZMNKAD",
-        "title": {
-          "en": "Alarm mode turned on",
-          "nl": "Alarm toestand aangezet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNKAD"
-          }
-        ]
-      },
-      {
-        "id": "alarmModeTurnedOff_ZMNKAD",
-        "title": {
-          "en": "Alarm mode turned off",
-          "nl": "Alarm toestand uitgezet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNKAD"
-          }
-        ]
-      },
-      {
         "id": "offAutoThermostatModeChanged_ZMNKID",
         "title": {
           "en": "Thermostat mode changed",
@@ -1764,6 +1233,515 @@
         "titleFormatted": {
           "en": "Thermostat mode changed to [[mode]]",
           "nl": "Thermostaat modus is veranderd naar [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNKID"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "resetMeter_ZMNHBD1",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": {
+              "driver_id": "ZMNHBD1",
+              "flags": "zwaveMultiChannel"
+            }
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHAA2",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAA2"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHAD1",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAD1"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHBA2",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHBA2"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHCD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHCD"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHDA2",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDA2"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHDD1",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD1"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHHD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHHD"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHIA2",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA2"
+          }
+        ]
+      },
+      {
+        "id": "setOffAutoThermostatMode_ZMNHIA2",
+        "title": {
+          "en": "Change thermostat mode",
+          "nl": "Stel thermostaat modus in"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA2"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHID",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          }
+        ]
+      },
+      {
+        "id": "setOffAutoThermostatMode_ZMNHID",
+        "title": {
+          "en": "Change thermostat mode",
+          "nl": "Stel thermostaat modus in"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHKD1",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHKD1"
+          }
+        ]
+      },
+      {
+        "id": "setOffAutoThermostatMode_ZMNHKD1",
+        "title": {
+          "en": "Change thermostat mode",
+          "nl": "Stel thermostaat modus in"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHKD1"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHLD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
+        "id": "setOffAutoThermostatMode_ZMNHLD",
+        "title": {
+          "en": "Change thermostat mode",
+          "nl": "Stel thermostaat modus in"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHOD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHOD"
+          }
+        ]
+      },
+      {
+        "id": "turnOnBuzzer_ZMNHQD",
+        "title": {
+          "en": "Turn on buzzer",
+          "nl": "Zet buzzer aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHQD"
+          }
+        ]
+      },
+      {
+        "id": "turnOffBuzzer_ZMNHQD",
+        "title": {
+          "en": "Turn buzzer off",
+          "nl": "Zet buzzer uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHQD"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHSD1",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHSD1"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHTD1",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHTD1"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHYD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHYD"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNKID",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNKID"
+          }
+        ]
+      },
+      {
+        "id": "setOffAutoThermostatMode_ZMNKID",
+        "title": {
+          "en": "Change thermostat mode",
+          "nl": "Stel thermostaat modus in"
         },
         "args": [
           {

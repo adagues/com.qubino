@@ -1,9 +1,0 @@
-{ "triggers":[
-  {
-    "$extends": "alarmModeTurnedOn"
-  },
-  {
-    "$extends": "alarmModeTurnedOff"
-  }
-  ]
-}
