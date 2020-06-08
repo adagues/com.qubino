@@ -1227,8 +1227,8 @@
       {
         "id": "alarmModeTurnedOn_ZMNHQD",
         "title": {
-          "en": "Alarm mode turned on",
-          "nl": "Alarm toestand aangezet"
+          "en": "The alarm turned on",
+          "nl": "Het alarm gaat aan"
         },
         "args": [
           {
@@ -1241,8 +1241,8 @@
       {
         "id": "alarmModeTurnedOff_ZMNHQD",
         "title": {
-          "en": "Alarm mode turned off",
-          "nl": "Alarm toestand uitgezet"
+          "en": "The alarm turned off",
+          "nl": "Het alarm ging uit"
         },
         "args": [
           {
@@ -13466,7 +13466,7 @@
     },
     {
       "name": {
-        "en": "LUXY Smart switch (ZMNKAD)"
+        "en": "LUXY Smart Switch (ZMNKAD)"
       },
       "images": {
         "large": "/drivers/ZMNKAD/assets/images/large.png",
@@ -13525,8 +13525,8 @@
             ],
             "icon": "/drivers/ZMNKAD/assets/icon.svg",
             "name": {
-              "en": "LUXY Smart switch (ZMNKAD) - Relay",
-              "nl": "LUXY Smart switch (ZMNKAD) - Relais"
+              "en": "LUXY Smart Switch (ZMNKAD) - Relay",
+              "nl": "LUXY Smart Switch (ZMNKAD) - Relais"
             },
             "settings": []
           }
@@ -13534,15 +13534,15 @@
         "learnmode": {
           "image": "/drivers/ZMNKAD/assets/learnmode.svg",
           "instruction": {
-            "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, LUXY Smart switch (ZMNKAD) starts flashing red 1 second on, 0.5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
-            "nl": "1. Activeer volledig wit (een keer drukken op (1)). \n\n2. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houd ingedrukt tussen 4 en 6 seconden.\n\n3. Na 6 seconden zal LUXY Smart switch (ZMNKAD) rood gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n\n4. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
+            "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, LUXY Smart Switch (ZMNKAD) starts flashing red 1 second on, 0,5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
+            "nl": "1. Activeer volledig wit (een keer drukken op (1)). \n\n2. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houd ingedrukt tussen 4 en 6 seconden.\n\n3. Na 6 seconden zal LUXY Smart Switch (ZMNKAD) rood gaan knipperen, 1 seconde aan, 0,5 seconde uit.\n\n4. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
           }
         },
         "unlearnmode": {
           "image": "/drivers/ZMNKAD/assets/unlearnmode.svg",
           "instruction": {
-            "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, LUXY Smart switch (ZMNKAD) starts flashing red 1 second on, 0.5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
-            "nl": "1. Activeer volledig wit (een keer drukken op (1)). \n\n2. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houd ingedrukt tussen 4 en 6 seconden.\n\n3. Na 6 seconden zal LUXY Smart switch (ZMNKAD) rood gaan knipperen, 1 seconde aan, 0.5 seconde uit.\n\n4. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
+            "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, LUXY Smart Switch (ZMNKAD) starts flashing red 1 second on, 0,5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
+            "nl": "1. Activeer volledig wit (een keer drukken op (1)). \n\n2. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houd ingedrukt tussen 4 en 6 seconden.\n\n3. Na 6 seconden zal LUXY Smart Switch (ZMNKAD) rood gaan knipperen, 1 seconde aan, 0,5 seconde uit.\n\n4. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
           }
         }
       },
@@ -13669,8 +13669,8 @@
           "id": "restoreStatusQ1",
           "type": "checkbox",
           "label": {
-            "en": "Restore output 1 state after power failure",
-            "nl": "Herstel uitgang 1 status na stroomonderbreking"
+            "en": "Restore state of output 1 after power failure",
+            "nl": "Herstel status van uitgang 1 na stroomonderbreking"
           },
           "zwave": {
             "index": 30,
@@ -13752,8 +13752,8 @@
           "id": "capacitiveControlRelayOnly",
           "type": "checkbox",
           "label": {
-            "en": "Capacitive control for relay only ",
-            "nl": "Capacitieve bediening enkel voor relais."
+            "en": "Capacitive control for relay only",
+            "nl": "Capacitieve bediening enkel voor relais"
           },
           "zwave": {
             "index": 60,
@@ -13761,8 +13761,8 @@
           },
           "value": false,
           "hint": {
-            "en": "This parameter (60) determines the if the capacitive controls can only be used for the connected relay (when enabled). Other functionalities (lighting mode, scenes, dimming and full white) are unavailable until this function is disabled",
-            "nl": "Deze parameter (60) bepaalt of de capacitieve bedieningsknop van het relais uitgeschakeld wordt. Overige functies (licht modus, scenes, dimmen en volledig wit) zijn niet beschikbaar totdat deze functie uitgeschakeld is."
+            "en": "This parameter (60) determines if the capacitive controls can only be used for the connected relay (when enabled). Other functionalities (lighting mode, scenes, dimming and full white) are unavailable until this function is disabled.",
+            "nl": "Deze parameter (60) bepaalt of de capacitieve bedieningsknoppen enkel voor het relais gebruikt kan worden (wanneer ingeschakeld). Overige functies (licht modus, scenes, dimmen en volledig wit) zijn niet beschikbaar totdat deze functie uitgeschakeld is."
           }
         },
         {

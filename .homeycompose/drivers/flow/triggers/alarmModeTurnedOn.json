@@ -1,7 +1,7 @@
 {
   "$id": "alarmModeTurnedOn_{{driverId}}",
   "title": {
-    "en": "Alarm mode turned on",
-    "nl": "Alarm toestand aangezet"
+    "en": "The alarm turned on",
+    "nl": "Het alarm gaat aan"
   }
 }
