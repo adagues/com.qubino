@@ -83,25 +83,6 @@ class ZMNKAD extends QubinoDimDevice {
   }
 
   /**
-   * Method that determines if current node is root node.
-   * @returns {boolean}
-   * @private
-   */
-  _isRootNode() {
-    return Object.prototype.hasOwnProperty.call(this.node, 'MultiChannelNodes') && Object.keys(this.node.MultiChannelNodes).length > 0;
-  }
-
-  /**
-   * Method that determines if current node is root node.
-   * @returns {boolean}
-   * @private
-   */
-  _isRelaySwitchNode() {
-    this.log('_isRelaySwitchNode', Object.prototype.hasOwnProperty.call(this.node, 'MultiChannelNodes'), Object.keys(this.node.MultiChannelNodes));
-    return Object.prototype.hasOwnProperty.call(this.node, 'MultiChannelNodes') && Object.keys(this.node.MultiChannelNodes).length > 0;
-  }
-
-  /**
    * This method is debounced and loops all registered color reports and updates the device capabilities accordingly.
    * @returns {Promise<void>}
    * @private
