@@ -2,8 +2,8 @@
 
 const QubinoDriver = require('./../../lib/QubinoDriver');
 
-class ZMNHQD extends QubinoDriver {
+class ZMNKAD extends QubinoDriver {
 
 }
 
-module.exports = ZMNHQD;
+module.exports = ZMNKAD;
