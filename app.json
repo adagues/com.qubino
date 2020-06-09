@@ -53,7 +53,7 @@
             }
           }
         ],
-        "id": "alarmModeTurnedOff_ZMNKAD"
+        "id": "alarmTurnedOff_ZMNKAD"
       },
       {
         "title": {
@@ -70,7 +70,7 @@
             }
           }
         ],
-        "id": "alarmModeTurnedOn_ZMNKAD"
+        "id": "alarmTurnedOn_ZMNKAD"
       },
       {
         "hint": null,
@@ -1225,7 +1225,7 @@
         ]
       },
       {
-        "id": "alarmModeTurnedOn_ZMNHQD",
+        "id": "alarmTurnedOn_ZMNHQD",
         "title": {
           "en": "The alarm turned on",
           "nl": "Het alarm gaat aan"
@@ -1239,7 +1239,7 @@
         ]
       },
       {
-        "id": "alarmModeTurnedOff_ZMNHQD",
+        "id": "alarmTurnedOff_ZMNHQD",
         "title": {
           "en": "The alarm turned off",
           "nl": "Het alarm ging uit"
@@ -13534,14 +13534,14 @@
         "learnmode": {
           "image": "/drivers/ZMNKAD/assets/learnmode.svg",
           "instruction": {
-            "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, LUXY Smart Switch (ZMNKAD) starts flashing red 1 second on, 0,5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
+            "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, LUXY Smart Switch (ZMNKAD) starts flashing red 1 second on, 0.5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
             "nl": "1. Activeer volledig wit (een keer drukken op (1)). \n\n2. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houd ingedrukt tussen 4 en 6 seconden.\n\n3. Na 6 seconden zal LUXY Smart Switch (ZMNKAD) rood gaan knipperen, 1 seconde aan, 0,5 seconde uit.\n\n4. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
           }
         },
         "unlearnmode": {
           "image": "/drivers/ZMNKAD/assets/unlearnmode.svg",
           "instruction": {
-            "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, LUXY Smart Switch (ZMNKAD) starts flashing red 1 second on, 0,5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
+            "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, LUXY Smart Switch (ZMNKAD) starts flashing red 1 second on, 0.5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
             "nl": "1. Activeer volledig wit (een keer drukken op (1)). \n\n2. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houd ingedrukt tussen 4 en 6 seconden.\n\n3. Na 6 seconden zal LUXY Smart Switch (ZMNKAD) rood gaan knipperen, 1 seconde aan, 0,5 seconde uit.\n\n4. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
           }
         }
@@ -13762,7 +13762,7 @@
           "value": false,
           "hint": {
             "en": "This parameter (60) determines if the capacitive controls can only be used for the connected relay (when enabled). Other functionalities (lighting mode, scenes, dimming and full white) are unavailable until this function is disabled.",
-            "nl": "Deze parameter (60) bepaalt of de capacitieve bedieningsknoppen enkel voor het relais gebruikt kan worden (wanneer ingeschakeld). Overige functies (licht modus, scenes, dimmen en volledig wit) zijn niet beschikbaar totdat deze functie uitgeschakeld is."
+            "nl": "Deze parameter (60) bepaalt of de capacitieve bedieningsknoppen enkel voor het relais gebruikt kunnen worden (wanneer ingeschakeld). Overige functies (licht modus, scenes, dimmen en volledig wit) zijn niet beschikbaar totdat deze functie uitgeschakeld is."
           }
         },
         {

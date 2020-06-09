@@ -6,10 +6,10 @@
     "$extends": "buzzerTurnedOff"
   },
   {
-    "$extends": "alarmModeTurnedOn"
+    "$extends": "alarmTurnedOn"
   },
   {
-    "$extends": "alarmModeTurnedOff"
+    "$extends": "alarmTurnedOff"
   }
   ],
   "actions": [
