@@ -1,0 +1,7 @@
+{
+  "$id": "alarmTurnedOff_{{driverId}}",
+  "title": {
+    "en": "The alarm turned off",
+    "nl": "Het alarm ging uit"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "name": {
+    "en": "LUXY Smart Switch (ZMNKAD)"
+  },
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    },
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    },
+    "button.reset_meter": {
+      "maintenanceAction": true,
+      "title": {
+        "en": "Reset power meter",
+        "nl": "Stel stroomverbuik opnieuw in"
+      },
+      "desc": {
+        "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+        "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 1.5,
+      "usageOff": 0
+    }
+  },
+  "zwave": {
+    "manufacturerId": 345,
+    "productTypeId": 8,
+    "productId": 82,
+    "includeSecure": false,
+    "associationGroups": [
+      1
+    ],
+    "multiChannelNodes": {
+      "2": {
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "button.reset_meter"
+        ],
+        "icon": "{{driverAssetsPath}}/icon.svg",
+        "name": {
+          "en": "{{driverNameEn}} - Relay",
+          "nl": "{{driverNameNl}} - Relais"
+        },
+        "settings": []
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, {{driverNameEn}} starts flashing red 1 second on, 0.5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
+        "nl": "1. Activeer volledig wit (een keer drukken op (1)). \n\n2. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houd ingedrukt tussen 4 en 6 seconden.\n\n3. Na 6 seconden zal {{driverNameNl}} rood gaan knipperen, 1 seconde aan, 0,5 seconde uit.\n\n4. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
+      }
+    },
+    "unlearnmode": {
+      "image": "{{driverAssetsPath}}/unlearnmode.svg",
+      "instruction": {
+        "en": "1. Activate full white (one press on (1)). \n\n2. When full white is enabled, press right (2) and hold it in between 4 and 6 seconds. \n\n3. After 6 seconds, {{driverNameEn}} starts flashing red 1 second on, 0.5 second off.\n\n4. Wait until the device stops flashing and turns full red.",
+        "nl": "1. Activeer volledig wit (een keer drukken op (1)). \n\n2. Wanneer volledig wit geactiveerd is, druk op rechts (2) en houd ingedrukt tussen 4 en 6 seconden.\n\n3. Na 6 seconden zal {{driverNameNl}} rood gaan knipperen, 1 seconde aan, 0,5 seconde uit.\n\n4. Wacht totdat het apparaat stopt met knipperen en volledig rood wordt."
+      }
+    }
+  }
+}

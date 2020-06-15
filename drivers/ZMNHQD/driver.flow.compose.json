@@ -4,6 +4,12 @@
   },
   {
     "$extends": "buzzerTurnedOff"
+  },
+  {
+    "$extends": "alarmTurnedOn"
+  },
+  {
+    "$extends": "alarmTurnedOff"
   }
   ],
   "actions": [

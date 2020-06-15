@@ -1,0 +1,10 @@
+{
+  "label": {
+    "en": "Restore state of output 1 after power failure",
+    "nl": "Herstel status van uitgang 1 na stroomonderbreking"
+  },
+  "hint": {
+    "en": "This parameter ({{zwaveParameterIndex}}) determines whether after a power failure output 1 should be restored to the state it had before the power failure, else it will remain turned off.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of uitgang 1 na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+  }
+}

@@ -11,96 +11,72 @@ const COLOR_REPORT_DEBOUNCE_TIMEOUT = 500; // ms
 const MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT = 500; // ms
 
 /**
- * LUXY Smart Light (ZMNHQD)
+ * LUXY Smart Light (ZMNKAD)
  * Extended manual:
  */
-class ZMNHQD extends QubinoDimDevice {
+class ZMNKAD extends QubinoDimDevice {
 
   /**
    * Method that will register capabilities of the device based on its configuration.
    * @private
    */
   async registerCapabilities() {
-    this.printNode();
+    if (this.node.deviceClassGeneric === 'GENERIC_TYPE_SWITCH_MULTILEVEL') {
+      this.log('Registering capabilities for GENERIC_TYPE_SWITCH_MULTILEVEL');
+      // Keep track of color reports
+      this._colorReportsQueue = [];
 
-    // Keep track of color reports
-    this._colorReportsQueue = [];
+      // Set empty color component state
+      this._colorComponentsState = {
+        red: null,
+        green: null,
+        blue: null,
+        dim: null,
+      };
 
-    // Set empty color component state
-    this._colorComponentsState = {
-      red: null,
-      green: null,
-      blue: null,
-      dim: null,
-    };
+      // Register onoff capability
+      this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_MULTILEVEL, {
+        getOpts: {
+          getOnStart: false, // onoff value is retrieved manually in _getCapabilityValuesOnStart()
+        },
+      });
 
-    // Register onoff capability
-    this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_MULTILEVEL, {
-      getOpts: {
-        getOnStart: false, // onoff value is retrieved manually in _getCapabilityValuesOnStart()
-      },
-    });
+      // Register dim capability
+      this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL, {
+        getOpts: {
+          getOnStart: false, // dim value is retrieved manually in _getCapabilityValuesOnStart()
+        },
+      });
 
-    // Register dim capability
-    this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL, {
-      getOpts: {
-        getOnStart: false, // dim value is retrieved manually in _getCapabilityValuesOnStart()
-      },
-    });
+      // Register report listener for switch color command class, the reports are debounced
+      this.registerMultiChannelReportListener(1, COMMAND_CLASSES.SWITCH_COLOR, COMMAND_CLASSES.SWITCH_COLOR_REPORT, report => {
+        if (this._colorReportDebounce) clearTimeout(this._colorReportDebounce);
+        this._colorReportsQueue.push(report);
+        this._colorReportDebounce = setTimeout(this._debouncedColorReportListener.bind(this), COLOR_REPORT_DEBOUNCE_TIMEOUT);
+      });
 
-    // Initialize Buzzer state
-    let reportedBuzzerState = this.getCapabilityValue(CAPABILITIES.ONOFF_BUZZER);
+      // Register capability listener for all capabilities which affect each other
+      this.registerMultipleCapabilityListener([CAPABILITIES.ONOFF, CAPABILITIES.DIM, CAPABILITIES.LIGHT_HUE, CAPABILITIES.LIGHT_SATURATION], this._multipleCapabilitiesHandler.bind(this), MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT);
 
-    // Register Alarm Buzzer onoff capability
-    this.registerCapability(CAPABILITIES.ONOFF_BUZZER, COMMAND_CLASSES.SOUND_SWITCH, {
-      get: 'SOUND_SWITCH_TONE_PLAY_GET',
-      set: 'SOUND_SWITCH_TONE_PLAY_SET',
-      getOpts: {
-        getOnStart: true,
-      },
-      setParserV1(value) {
-        return { 'Tone identifier': value ? 1 : 0 };
-      },
-      report: 'SOUND_SWITCH_TONE_PLAY_REPORT',
-      reportParserV1: report => {
-        if (report && report.hasOwnProperty('Tone Identifier')) {
-          const parsedPayload = report['Tone Identifier'] === 1;
-          if (reportedBuzzerState !== parsedPayload) {
-            reportedBuzzerState = parsedPayload;
-            this.driver.triggerFlow(FLOWS[`BUZZER_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.BUZZER_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`, err));
-            return reportedBuzzerState;
-          }
+      // Register reportListener to trigger alarm mode trigger card
+      // NodeID, 0x71,0x05,0x00,0x00,0x00,0xFF,0x0E,0x01,0x00 to send Siren Notification On
+      // NodeID, 0x71,0x05,0x00,0x00,0x00,0xFF,0x0E,0x00,0x00 to send Siren Notification Off
+      this.registerMultiChannelReportListener(1, COMMAND_CLASSES.NOTIFICATION, COMMAND_CLASSES.NOTIFICATION_REPORT, report => {
+        this.log('COMMAND_CLASSES.NOTIFICATION_REPORT', report, report['Notification Type'], report['Event']);
+        if (report && report['Notification Type'] === 'Siren' && report.hasOwnProperty('Event')) {
+          const parsedPayload = report['Event'] === 1;
+
+          this.driver.triggerFlow(FLOWS[`ALARM_MODE_TURNED_${parsedPayload ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.ALARM_MODE_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`, err));
         }
-        return null;
-      },
-    });
+      });
+    }
 
-    this.registerReportListener(COMMAND_CLASSES.NOTIFICATION, COMMAND_CLASSES.NOTIFICATION_REPORT, report => {
-      if (report && report['Notification Type'] === 'Siren' && report.hasOwnProperty('Event')) {
-        const parsedPayload = report['Event'] === 1;
-        // trigger Alarm mode trigger card
-        this.driver.triggerFlow(FLOWS[`ALARM_MODE_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.ALARM_MODE_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`, err));
-        // trigger Buzzer state trigger card only if buzzer state changed
-        if (reportedBuzzerState !== parsedPayload) {
-          reportedBuzzerState = parsedPayload;
-          this.driver.triggerFlow(FLOWS[`BUZZER_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`], this, {}, {}).catch(err => this.error('failed to trigger flow', `FLOWS.BUZZER_TURNED_${reportedBuzzerState ? 'ON' : 'OFF'}`, err));
-          this.setCapabilityValue(CAPABILITIES.ONOFF_BUZZER, reportedBuzzerState);
-        }
-      }
-    });
-
-    // Register Alarm Buzzer volume capability
-    this.registerCapability(CAPABILITIES.VOLUME_SET, COMMAND_CLASSES.SOUND_SWITCH);
-
-    // Register report listener for switch color command class, the reports are debounced
-    this.registerReportListener(COMMAND_CLASSES.SWITCH_COLOR, COMMAND_CLASSES.SWITCH_COLOR_REPORT, report => {
-      if (this._colorReportDebounce) clearTimeout(this._colorReportDebounce);
-      this._colorReportsQueue.push(report);
-      this._colorReportDebounce = setTimeout(this._debouncedColorReportListener.bind(this), COLOR_REPORT_DEBOUNCE_TIMEOUT);
-    });
-
-    // Register capability listener for all capabilities which affect each other
-    this.registerMultipleCapabilityListener([CAPABILITIES.ONOFF, CAPABILITIES.DIM, CAPABILITIES.LIGHT_HUE, CAPABILITIES.LIGHT_SATURATION], this._multipleCapabilitiesHandler.bind(this), MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT);
+    if (this.node.deviceClassGeneric === 'GENERIC_TYPE_SWITCH_BINARY') {
+      this.log('Registering capabilities for GENERIC_TYPE_SWITCH_BINARY');
+      if (this.hasCapability(CAPABILITIES.METER_POWER)) this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+      if (this.hasCapability(CAPABILITIES.MEASURE_POWER)) this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+      if (this.hasCapability(CAPABILITIES.ONOFF)) this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
+    }
 
     // Fetch capability values from device
     await this._getCapabilityValuesOnStart();
@@ -302,6 +278,7 @@ class ZMNHQD extends QubinoDimDevice {
       // Execute dim only
       return this.executeCapabilitySetCommand(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL, mergedCapabilitiesValuesObject.dim, {
         duration: dimDuration,
+        multiChannelNodeId: 1,
       });
     }
 
@@ -312,6 +289,7 @@ class ZMNHQD extends QubinoDimDevice {
       this._ignoreNextColorReport = true;
       return this.executeCapabilitySetCommand(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_MULTILEVEL, false, {
         duration: dimDuration,
+        multiChannelNodeId: 1,
       });
     }
 
@@ -334,6 +312,7 @@ class ZMNHQD extends QubinoDimDevice {
       // Switch on dimmer
       this.executeCapabilitySetCommand(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_MULTILEVEL, true, {
         duration: dimDuration,
+        multiChannelNodeId: 1,
       });
     }
 
@@ -493,11 +472,11 @@ class ZMNHQD extends QubinoDimDevice {
     // Fix broken CC_SWITCH_COLOR_V2 parser
     if (SwitchColorVersion >= 2) {
       this.log('_sendColors() -> create buffer manually');
-      setCommand = new Buffer([setCommand.Properties1['Color Component Count'], 2, setCommand.vg1[0].Value, 3, setCommand.vg1[1].Value, 4, setCommand.vg1[2].Value, 255]);
+      setCommand = Buffer.from([setCommand.Properties1['Color Component Count'], 2, setCommand.vg1[0].Value, 3, setCommand.vg1[1].Value, 4, setCommand.vg1[2].Value, 255]);
     }
     return this.node.CommandClass.COMMAND_CLASS_SWITCH_COLOR.SWITCH_COLOR_SET(setCommand);
   }
 
 }
 
-module.exports = ZMNHQD;
+module.exports = ZMNKAD;

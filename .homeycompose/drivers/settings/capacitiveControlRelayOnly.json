@@ -1,0 +1,16 @@
+{
+  "type": "checkbox",
+  "label": {
+    "en": "Capacitive control for relay only",
+    "nl": "Capacitieve bediening enkel voor relais"
+  },
+  "zwave": {
+    "index": 60,
+    "size": 1
+  },
+  "value": false,
+  "hint": {
+    "en": "This parameter ({{zwaveParameterIndex}}) determines if the capacitive controls can only be used for the connected relay (when enabled). Other functionalities (lighting mode, scenes, dimming and full white) are unavailable until this function is disabled.",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de capacitieve bedieningsknoppen enkel voor het relais gebruikt kunnen worden (wanneer ingeschakeld). Overige functies (licht modus, scenes, dimmen en volledig wit) zijn niet beschikbaar totdat deze functie uitgeschakeld is."
+  }
+}

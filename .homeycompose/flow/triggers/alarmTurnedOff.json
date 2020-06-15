@@ -1,0 +1,17 @@
+{
+  "$id": "alarmTurnedOff_ZMNKAD",
+  "title": {
+    "en": "Alarm mode turned off",
+    "nl": "Alarm toestand uitgezet"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": {
+        "driver_id": "ZMNKAD",
+        "flags": "zwaveRoot"
+      }
+    }
+  ]
+}

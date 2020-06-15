@@ -1,0 +1,100 @@
+[
+  {
+    "$extends": "autoOff",
+    "zwave": {
+      "index": 11,
+      "size": 2
+    }
+  },
+  {
+    "$extends": "autoOn",
+    "zwave": {
+      "index": 10,
+      "size": 2
+    }
+  },
+  {
+    "$extends": ["autoOff", "autoOffQ1"],
+    "zwave": {
+      "index": 13,
+      "size": 2
+    }
+  },
+  {
+    "$extends": ["autoOn", "autoOnQ1"],
+    "zwave": {
+      "index": 12,
+      "size": 2
+    },
+    "value": 0,
+    "attr": {
+      "min": 0,
+      "max": 32535
+    }
+  },
+  {
+    "$extends": "restoreStatus"
+  },
+  {
+    "$extends": [ "restoreStatus", "restoreStatusQ1"]
+  },
+  {
+    "id": "turnOffAlarm",
+    "type": "dropdown",
+    "zwave": {
+      "index": 3,
+      "size": 1
+    },
+    "label": {
+      "en": "Turn alarm mode off",
+      "nl": "Alarm status uitschakelen"
+    },
+    "value": "1",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Only by Homey (Z-wave)",
+          "nl": "Enkel door Homey (Z-wave)"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Capacitive input & Homey (Z-wave)",
+          "nl": "Capacitieve bedieningsknoppen & Homey (Z-wave)"
+        }
+      }
+    ],
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) determines how the buzzer can be turned off.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) specificeert hoe de buzzer uitgeschakeld kan worden."
+    }
+  },
+  {
+    "$extends": ["relayType", "relayTypeQ1"],
+    "zwave": {
+      "index": 1,
+      "size": 1
+    }
+  },
+  {
+    "$extends": "capacitiveControlRelayOnly"
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Power reporting",
+      "nl": "Stroomverbruik"
+    },
+    "children": [
+      {
+        "$extends": "powerReportingThreshold"
+      },
+      {
+        "$extends": "powerReportingInterval"
+      }
+    ]
+  }
+
+]
