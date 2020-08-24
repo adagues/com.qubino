@@ -4,7 +4,7 @@
     "en": "Qubino"
   },
   "sdk": 2,
-  "version": "3.3.0",
+  "version": "3.3.1",
   "compatibility": ">=4.0.0",
   "brandColor": "#1784c7",
   "description": {
@@ -1227,8 +1227,8 @@
       {
         "id": "alarmTurnedOn_ZMNHQD",
         "title": {
-          "en": "The alarm turned on",
-          "nl": "Het alarm gaat aan"
+          "en": "Alarm mode turned off",
+          "nl": "Alarm toestand uitgezet"
         },
         "args": [
           {
@@ -1241,8 +1241,8 @@
       {
         "id": "alarmTurnedOff_ZMNHQD",
         "title": {
-          "en": "The alarm turned off",
-          "nl": "Het alarm ging uit"
+          "en": "Alarm mode turned off",
+          "nl": "Alarm toestand uitgezet"
         },
         "args": [
           {
@@ -10475,6 +10475,10 @@
             "index": 11,
             "size": 2
           },
+          "hint": {
+            "en": "This parameter (11) defines the time (>30 seconds) after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd (>30 seconden) waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          },
           "id": "autoOff",
           "type": "number",
           "label": {
@@ -10489,16 +10493,16 @@
           "units": {
             "en": "s",
             "nl": "s"
-          },
-          "hint": {
-            "en": "This parameter (11) defines the time after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
-            "nl": "Deze parameter (11) bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
           }
         },
         {
           "zwave": {
             "index": 10,
             "size": 2
+          },
+          "hint": {
+            "en": "This parameter (10) defines the time (>30 seconds) after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (10) bepaalt de tijd (>30 seconden) waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
           },
           "id": "autoOn",
           "type": "number",
@@ -10514,10 +10518,6 @@
           "attr": {
             "min": 0,
             "max": 32535
-          },
-          "hint": {
-            "en": "This parameter (10) defines the time after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
-            "nl": "Deze parameter (10) bepaalt de tijd waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
           }
         },
         {
@@ -13553,6 +13553,10 @@
             "index": 11,
             "size": 2
           },
+          "hint": {
+            "en": "This parameter (11) defines the time (>30 seconds) after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd (>30 seconden) waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          },
           "id": "autoOff",
           "type": "number",
           "label": {
@@ -13567,16 +13571,16 @@
           "units": {
             "en": "s",
             "nl": "s"
-          },
-          "hint": {
-            "en": "This parameter (11) defines the time after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
-            "nl": "Deze parameter (11) bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
           }
         },
         {
           "zwave": {
             "index": 10,
             "size": 2
+          },
+          "hint": {
+            "en": "This parameter (10) defines the time (>30 seconds) after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (10) bepaalt de tijd (>30 seconden) waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
           },
           "id": "autoOn",
           "type": "number",
@@ -13592,16 +13596,16 @@
           "attr": {
             "min": 0,
             "max": 32535
-          },
-          "hint": {
-            "en": "This parameter (10) defines the time after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
-            "nl": "Deze parameter (10) bepaalt de tijd waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
           }
         },
         {
           "zwave": {
             "index": 13,
             "size": 2
+          },
+          "hint": {
+            "en": "This parameter (13) defines the time (>30 seconds) after which output 1 is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (13) bepaalt de tijd (>30 seconden) waarna uitgang 1 automatisch wordt uitgezet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
           },
           "id": "autoOffQ1",
           "type": "number",
@@ -13617,10 +13621,6 @@
           "units": {
             "en": "s",
             "nl": "s"
-          },
-          "hint": {
-            "en": "This parameter (13) defines the time after which output 1 is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
-            "nl": "Deze parameter (13) bepaalt de tijd waarna uitgang 1 automatisch wordt uitgezet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
           }
         },
         {
@@ -13633,6 +13633,10 @@
             "min": 0,
             "max": 32535
           },
+          "hint": {
+            "en": "This parameter (12) defines the time (>30 seconds) after which output 1 is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (12) bepaalt de tijd (>30 seconden) waarna uitgang 1 automatisch wordt aangezet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+          },
           "id": "autoOnQ1",
           "type": "number",
           "label": {
@@ -13642,10 +13646,6 @@
           "units": {
             "en": "s",
             "nl": "s"
-          },
-          "hint": {
-            "en": "This parameter (12) defines the time after which output 1 is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
-            "nl": "Deze parameter (12) bepaalt de tijd waarna uitgang 1 automatisch wordt aangezet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
           }
         },
         {
