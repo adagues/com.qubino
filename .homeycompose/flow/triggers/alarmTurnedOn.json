@@ -5,13 +5,13 @@
     "nl": "Alarm toestand aangezet"
   },
   "args": [
-      {
-        "name": "device",
-        "type": "device",
-        "filter": {
-          "driver_id": "ZMNKAD",
-          "flags": "zwaveRoot"
-        }
+    {
+      "name": "device",
+      "type": "device",
+      "filter": {
+        "driver_id": "ZMNKAD",
+        "flags": "zwaveRoot"
       }
-    ]
+    }
+  ]
 }
