@@ -4,6 +4,10 @@
     "zwave": {
       "index": 11,
       "size": 2
+    },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) defines the time (>30 seconds) after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd (>30 seconden) waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
     }
   },
   {
@@ -11,6 +15,10 @@
     "zwave": {
       "index": 10,
       "size": 2
+    },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) defines the time (>30 seconds) after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd (>30 seconden) waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
     }
   },
   {
