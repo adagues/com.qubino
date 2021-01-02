@@ -1,0 +1,7 @@
+{
+  "actions" : [
+    {
+      "$extends" : "setModeChauffage_ZMNHJD1"
+    }
+  ]
+}

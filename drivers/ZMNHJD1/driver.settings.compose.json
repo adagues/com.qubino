@@ -1,0 +1,32 @@
+[
+  {
+    "$extends" : "restoreStatus"
+  },
+  {
+    "$extends" : "switchTypeInput1"
+  },
+  {
+    "$extends" : "contactTypeInput1"
+  },
+  {
+    "$extends" : "functionalityInput1"
+  },
+  {
+    "$extends" : "switchTypeInput2"
+  },
+  {
+    "$extends" : "contactTypeInput2"
+  },
+  {
+    "$extends" : "functionalityInput2"
+  },
+  {
+    "$extends" : "switchTypeInput3"
+  },
+  {
+    "$extends" : "contactTypeInput3"
+  },
+  {
+    "$extends" : "functionalityInput3"
+  },
+]
